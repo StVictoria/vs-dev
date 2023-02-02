@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { motion } from 'framer-motion'
 
-const About: FC = () => {
+const Portfolio: FC = () => {
   return (
     <motion.div
       initial={{ x: '100%' }}
@@ -22,4 +22,4 @@ const About: FC = () => {
   )
 }
 
-export default About
+export default Portfolio

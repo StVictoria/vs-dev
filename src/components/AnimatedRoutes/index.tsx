@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { Route, Routes, useLocation } from 'react-router-dom'
 import Home from '../Home'
-import About from '../About'
+import Portfolio from '../Portfolio'
 import Experience from '../Experience'
 import { AnimatePresence } from 'framer-motion'
 
@@ -12,7 +12,7 @@ const AnimatedRoutes: FC = () => {
     <AnimatePresence mode='wait'>
       <Routes location={location} key={location.pathname}>
         <Route path='/' element={<Home />} />
-        <Route path='/about' element={<About />} />
+        <Route path='/portfolio' element={<Portfolio />} />
         <Route path='/experience' element={<Experience />} />
       </Routes>
     </AnimatePresence>
