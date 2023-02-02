@@ -1,16 +1,13 @@
-import { BrowserRouter as Router, Link } from 'react-router-dom'
+import { BrowserRouter as Router } from 'react-router-dom'
 import s from './App.module.sass'
 import AnimatedRoutes from './AnimatedRoutes'
+import Sidebar from './Sidebar'
 
 function App() {
   return (
     <div className={s.app}>
       <Router>
-        <aside className={s.sidebar}>
-          <Link to='/'>Home</Link>
-          <Link to='/about'>About</Link>
-          <Link to='/experience'>Experience</Link>
-        </aside>
+        <Sidebar />
         <AnimatedRoutes />
       </Router>
     </div>
