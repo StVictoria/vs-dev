@@ -1,0 +1,31 @@
+.socials
+    position: fixed
+    top: -100px
+    left: 0
+    right: 0
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 100%
+    padding: 30px 0
+    z-index: 100
+
+.socials_showed
+    top: 0
+    transition: 1s all
+
+.social_iconWrapper
+    transition: 0.6s all
+
+.social_iconWrapper:hover
+    transform: scale(1.2)
+
+.social_iconWrapper:not(:last-child)
+    margin-right: 28px
+
+.socials_icon
+    width: 28px
+    height: 28px
+    background-position: center
+    background-repeat: no-repeat
+    background-size: contain

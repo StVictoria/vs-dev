@@ -1,5 +1,5 @@
 import { IconButton } from '@mui/material'
-import { FC } from 'react'
+import { FC, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import s from './styles.module.sass'
 import HomeIcon from '@mui/icons-material/Home'
@@ -7,8 +7,14 @@ import AutoAwesomeMosaicIcon from '@mui/icons-material/AutoAwesomeMosaic'
 import WorkIcon from '@mui/icons-material/Work'
 
 const Sidebar: FC = () => {
+  useEffect(() => {
+    const sidebar = document.getElementById('sidebar')
+    sidebar?.classList.add(s.sidebar_showed)
+  }, [])
+
   return (
-    <aside className={s.sidebar}>
+    // <div className={s.sidebar_wrapper}>
+    <aside id='sidebar' className={s.sidebar}>
       <Link to='/'>
         <IconButton aria-label='home' size='large'>
           <HomeIcon fontSize='inherit' />
@@ -25,6 +31,7 @@ const Sidebar: FC = () => {
         </IconButton>
       </Link>
     </aside>
+    // </div>
   )
 }
 
