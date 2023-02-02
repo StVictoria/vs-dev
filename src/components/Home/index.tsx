@@ -1,6 +1,7 @@
 import { FC } from 'react'
 import { motion } from 'framer-motion'
 import s from './styles.module.sass'
+import { Link } from 'react-router-dom'
 
 const Home: FC = () => {
   return (
@@ -13,7 +14,10 @@ const Home: FC = () => {
     >
       <div className={s.home_left}>
         <p>
-          Hi, I'm <span className={s.home_myName}>Viktoriia</span>
+          Hi, I'm{' '}
+          <Link to='https://github.com/StVictoria' className={s.home_myName}>
+            Viktoriia
+          </Link>
         </p>
         <p>Frontend developer</p>
         <p className={s.home_year}>Since 2019</p>

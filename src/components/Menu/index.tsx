@@ -9,7 +9,9 @@ const Menu: FC = () => {
 
   useEffect(() => {
     const menu = document.getElementById('menu')
-    menu?.classList.add(s.menu_showed)
+    setTimeout(() => {
+      menu?.classList.add(s.menu_showed)
+    }, 1000)
   }, [])
 
   const renderMenu = () =>

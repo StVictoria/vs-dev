@@ -1,0 +1,80 @@
+@keyframes switchMode
+    0%
+        top: -6px
+    50%
+        top: 20px
+        opacity: 0
+    100%
+        top: -6px
+
+.header
+    position: fixed
+    top: -100px
+    left: 0
+    right: 0
+    display: flex
+    justify-content: space-between
+    align-items: center
+    width: 100%
+    padding: 20px 20px
+    z-index: 100
+
+.header_showed
+    top: 0
+    transition: 1s all
+
+.header_logo
+    width: 3vw
+    height: 3vw
+
+.header_socials
+    display: flex
+    justify-content: center
+    align-items: center
+
+.header_socialIconWrapper
+    transition: 0.6s all
+
+.header_socialIconWrapper:hover
+    transform: scale(1.2)
+
+.header_socialIconWrapper:not(:last-child)
+    margin-right: 28px
+
+.header_socialIcon
+    width: 28px
+    height: 28px
+    background-position: center
+    background-repeat: no-repeat
+    background-size: contain
+
+.header_modeButton
+    position: relative
+    width: 45px
+    height: 45px
+    background: url('../../assets/desert.svg') center center / contain no-repeat
+    cursor: pointer
+
+.header_modeButton.disabled
+    opacity: 0.5
+    cursor: default
+
+.header_modeIcon
+    position: absolute
+    top: -6px
+    right: 10px
+    width: 14px
+    height: 14px
+    border-radius: 50%
+    background-color: #ffce08
+    z-index: -1
+
+.header_modeIcon.dark
+    transition: 1s all
+    background-color: grey
+    animation: switchMode 1s
+
+.header_modeIcon.light
+    transition: 1s all
+    background-color: #ffce08
+    animation: switchMode 1s
