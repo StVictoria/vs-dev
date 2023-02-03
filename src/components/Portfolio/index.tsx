@@ -3,13 +3,15 @@ import { motion } from 'framer-motion'
 import { factsAboutMe, IFactAboutMe } from '../../static/factsAboutMe'
 import s from './styles.module.sass'
 import { ITechnology, technologies } from '../../static/technologies'
+import { Link } from 'react-router-dom'
 
 const Portfolio: FC = () => {
   const renderFactsAboutMe = () =>
     factsAboutMe.map((fact: IFactAboutMe) => (
       <li className={s.portfolio_fact} key={fact.id}>
         <fact.icon className={s.portfolio_factIcon} />
-        {fact.title}
+        <p>{fact.title}</p>
+        <p className={s.portfolio_factDecr}>{fact.descr}</p>
       </li>
     ))
 
@@ -20,7 +22,9 @@ const Portfolio: FC = () => {
         className={s.portfolio_tech}
         style={{ backgroundColor: tech.color }}
       >
-        <img src={tech.img} alt={tech.name} />
+        <Link to={tech.to} className={s.portfolio_techLink} target='_blank'>
+          <img src={tech.img} alt={tech.name} />
+        </Link>
       </li>
     ))
 
@@ -39,8 +43,10 @@ const Portfolio: FC = () => {
       <section className={s.portfolio_block}>
         <h2>Technologies I use</h2>
         <div className={s.portfolio_techSliderWrapper}>
-          <ul className={s.portfolio_techs}>{renderTechnologies()}
-          {renderTechnologies()}</ul>
+          <ul className={s.portfolio_techs}>
+            {renderTechnologies()}
+            {renderTechnologies()}
+          </ul>
         </div>
       </section>
       {/* <section className={s.portfolio_block}>
