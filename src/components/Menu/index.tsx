@@ -27,11 +27,9 @@ const Menu: FC = () => {
     ))
 
   return (
-    // <div className={s.sidebar_wrapper}>
     <aside id='menu' className={s.menu}>
       {renderMenu()}
     </aside>
-    // </div>
   )
 }
 

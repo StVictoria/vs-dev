@@ -4,6 +4,7 @@ import { factsAboutMe, IFactAboutMe } from '../../static/factsAboutMe'
 import s from './styles.module.sass'
 import { ITechnology, technologies } from '../../static/technologies'
 import { Link } from 'react-router-dom'
+import { IProject, projects } from '../../static/projects'
 
 const Portfolio: FC = () => {
   const renderFactsAboutMe = () =>
@@ -28,6 +29,13 @@ const Portfolio: FC = () => {
       </li>
     ))
 
+  const renderProjects = () =>
+    projects.map((project: IProject) => (
+      <li className={s.portfolio_project}>
+        <img className={s.portfolio_projectImg} src={project.img} alt={project.title} />
+      </li>
+    ))
+
   return (
     <motion.div
       initial={{ x: '100%' }}
@@ -49,9 +57,10 @@ const Portfolio: FC = () => {
           </ul>
         </div>
       </section>
-      {/* <section className={s.portfolio_block}>
-        <h2>Portfolio</h2>
-      </section> */}
+      <section className={s.portfolio_block}>
+        <h2>Some of projects</h2>
+        <ul className={s.portfolio_projects}>{renderProjects()}</ul>
+      </section>
     </motion.div>
   )
 }

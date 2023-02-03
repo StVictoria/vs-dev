@@ -15,7 +15,7 @@ const Home: FC = () => {
       <div className={s.home_left}>
         <p>
           Hi, I'm{' '}
-          <Link to='https://github.com/StVictoria' className={s.home_myName}>
+          <Link to='https://github.com/StVictoria' className={s.home_myName} target="_blank">
             Viktoriia
           </Link>
         </p>
