@@ -1,0 +1,62 @@
+@import '/src/styles/vars.sass'
+
+@keyframes scroll
+    0%
+        transform: translateX(0)
+    100%
+        transform: translateX(-2800px)
+
+.portfolio
+    display: flex
+    flex-direction: column
+    align-items: center
+    padding-top: 6vw
+    overflow-y: auto
+
+.portfolio_block
+    > h2
+        text-align: center
+        margin-bottom: 2vw
+
+.portfolio_block:not(:last-child)
+    margin-bottom: 4vw
+
+.portfolio_facts
+    display: flex
+
+.portfolio_fact
+    display: flex
+    align-items: center
+    padding: 13px
+    border-radius: 10px
+    background-color: $primary
+    color: white
+
+.portfolio_fact:not(:last-child)
+    margin-right: 3vw
+
+.portfolio_factIcon
+    margin-right: 10px
+
+.portfolio_techSliderWrapper
+    max-width: 100vw
+    overflow-x: hidden
+
+.portfolio_techs
+    display: flex
+    width: 5600px // (100px+40px) * 20 items
+    animation: scroll 30s infinite linear
+
+.portfolio_tech
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 100px
+    height: 100px
+    padding: 30px
+    border-radius: 13px
+    cursor: pointer
+    margin-left: 40px
+
+.portfolio_tech img
+    width: 40px

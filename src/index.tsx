@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import './index.sass'
+import './styles/index.sass'
 import App from './components/App'
 import reportWebVitals from './reportWebVitals'
 import { handleAppLoaded } from './utils/base'
