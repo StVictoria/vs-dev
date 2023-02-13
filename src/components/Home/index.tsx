@@ -13,13 +13,13 @@ const Home: FC = () => {
       className={s.home}
     >
       <div className={s.home_left}>
-        <p>
+        <p className={s.home_greeting}>
           Hi, I'm{' '}
           <Link to='https://github.com/StVictoria' className={s.home_myName} target="_blank">
             Viktoriia
           </Link>
         </p>
-        <p>Frontend developer</p>
+        <h1 className={s.home_ocupation}>Frontend developer</h1>
         <p className={s.home_year}>Since 2019</p>
       </div>
       <div className={s.home_right}>

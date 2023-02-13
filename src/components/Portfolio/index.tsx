@@ -24,11 +24,7 @@ const Portfolio: FC = () => {
         className={s.portfolio_tech}
         style={{ backgroundColor: tech.color }}
       >
-        <Link
-          to={tech.to}
-          className={s.portfolio_techLink}
-          target='_blank'
-        >
+        <Link to={tech.to} className={s.portfolio_techLink} target='_blank'>
           <img src={tech.img} alt={tech.name} />
         </Link>
       </li>

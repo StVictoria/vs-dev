@@ -28,8 +28,8 @@ export interface IProject {
 export const projects: IProject[] = [
     { id: 1, title: 'Lasles', img: lasles, githubLink: '/', techs: [{ id: 1, title: 'Preact', icon: preact, to: '/' }, { id: 2, title: 'SCSS', icon: sass, to: '/' }] },
     { id: 2, title: 'Enver', img: enver, githubLink: '/', techs: [{ id: 1, title: 'Next.js', icon: next, to: '/' }, { id: 2, title: 'TypeScript', icon: ts, to: '/' }, { id: 3, title: 'SASS', icon: sass, to: '/' }] },
-    { id: 3, title: 'Qubly', img: qubly, githubLink: '/', techs: [{ id: 1, title: 'Next.js', icon: next, to: '/' }, { id: 2, title: 'TypeScript', icon: ts, to: '/' }, { id: 3, title: 'Effector', icon: effector, to: '/' }, { id: 4, title: 'SASS', icon: sass, to: '/' }] },
-    { id: 4, title: 'Selfschool', img: selfschool, githubLink: '/', techs: [{ id: 1, title: 'Next.js', icon: next, to: '/' }, { id: 2, title: 'TypeScript', icon: ts, to: '/' }, { id: 3, title: 'SASS', icon: sass, to: '/' }] },
+    { id: 3, title: 'Qubly', img: qubly, githubLink: '/', techs: [{ id: 1, title: 'Next.js', icon: next, to: '/' }, { id: 2, title: 'TypeScript', icon: ts, to: '/' }, { id: 3, title: 'SASS', icon: sass, to: '/' }] },
+    { id: 4, title: 'Selfschool', img: selfschool, githubLink: '/', techs: [{ id: 1, title: 'Next.js', icon: next, to: '/' }, { id: 2, title: 'TypeScript', icon: ts, to: '/' }, { id: 3, title: 'Effector', icon: effector, to: '/' }, { id: 4, title: 'SASS', icon: sass, to: '/' }] },
     { id: 5, title: 'CRYPTO LOTTO', img: cryptoLotto, githubLink: '/', techs: [{ id: 1, title: 'Next.js', icon: next, to: '/' }, { id: 2, title: 'TypeScript', icon: ts, to: '/' }, { id: 3, title: 'SASS', icon: sass, to: '/' }, { id: 3, title: 'Ethers', icon: ethers, to: '/' }] },
     // { id: 1, title: '', img: '', githubLink: '/', techs: [{ id: 1, title: '', icon: '', to: '/' }] },
 ]

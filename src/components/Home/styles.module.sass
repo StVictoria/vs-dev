@@ -2,10 +2,10 @@
 
 @keyframes laptopDotPulse
     100%
-        width: 34px
-        height: 34px
-        margin-top: -17px
-        margin-left: -17px
+        width: 3vw
+        height: 3vw
+        margin-top: -1.5vw
+        margin-left: -1.5vw
         opacity: 0
 
 .home
@@ -24,6 +24,9 @@
     width: 50vw
     font-size: 4vw
     font-weight: bold
+
+.home_greeting, .home_ocupation, .home_myName
+    font-size: 4vw
 
 .home_myName
     color: $primary
@@ -46,11 +49,11 @@
 
 .home_avatarWrapper:hover
     .home_laptop
-        height: 129px
+        height: 8.4vw
         box-shadow: 4px -4px 6px rgba(255,255,255,0.7)
         .home_laptopCircle
             position: relative
-            height: 10px
+            height: 1vw
             &::after
                 content: ''
                 position: absolute
@@ -81,7 +84,7 @@
     transition: 1s all
 
 .home_laptopCircle
-    width: 10px
+    width: 1vw
     height: 1px
     background-color: white
     border-radius: 50%
