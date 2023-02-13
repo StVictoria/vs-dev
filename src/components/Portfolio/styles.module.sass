@@ -12,6 +12,7 @@
     align-items: center
     padding-top: 6vw
     overflow-y: auto
+    padding-bottom: 170px
 
 .portfolio_block
     > h2
@@ -66,6 +67,9 @@
         animation-play-state: paused
 
 .portfolio_tech
+    display: flex
+    justify-content: center
+    align-items: center
     width: 100px
     height: 100px
     border-radius: 13px
@@ -86,19 +90,10 @@
     transition: 0.6s all
     width: 40px
 
-// projects --------------------------
-
 .portfolio_projects
     display: grid
     grid-template-columns: repeat(3, 20vw)
     gap: 5vw
 
 .portfolio_project
-    background-color: pink
     border-radius: 16px
-    border: 1px solid #e4e4e4
-    overflow: hidden
-
-.portfolio_projectImg
-    width: 100%
-    height: 100%

@@ -1,5 +1,6 @@
 import { FC } from 'react'
 import { motion } from 'framer-motion'
+import s from './styles.module.sass'
 
 const Experience: FC = () => {
   return (
@@ -8,8 +9,9 @@ const Experience: FC = () => {
       animate={{ x: 0 }}
       exit={{ x: '-100%' }}
       transition={{ duration: 0.7 }}
+      className={s.experience}
     >
-      Experience
+      <div className={s.experience_timeline}>My way</div>
     </motion.div>
   )
 }

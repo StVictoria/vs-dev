@@ -5,6 +5,7 @@ import s from './styles.module.sass'
 import { ITechnology, technologies } from '../../static/technologies'
 import { Link } from 'react-router-dom'
 import { IProject, projects } from '../../static/projects'
+import Project from '../Project'
 
 const Portfolio: FC = () => {
   const renderFactsAboutMe = () =>
@@ -23,7 +24,11 @@ const Portfolio: FC = () => {
         className={s.portfolio_tech}
         style={{ backgroundColor: tech.color }}
       >
-        <Link to={tech.to} className={s.portfolio_techLink} target='_blank'>
+        <Link
+          to={tech.to}
+          className={s.portfolio_techLink}
+          target='_blank'
+        >
           <img src={tech.img} alt={tech.name} />
         </Link>
       </li>
@@ -32,7 +37,12 @@ const Portfolio: FC = () => {
   const renderProjects = () =>
     projects.map((project: IProject) => (
       <li className={s.portfolio_project}>
-        <img className={s.portfolio_projectImg} src={project.img} alt={project.title} />
+        <Project
+          img={project.img}
+          title={project.title}
+          techs={project.techs}
+          githubLink={project.githubLink}
+        />
       </li>
     ))
 
@@ -58,7 +68,7 @@ const Portfolio: FC = () => {
         </div>
       </section>
       <section className={s.portfolio_block}>
-        <h2>Some of projects</h2>
+        <h2>Some of the projects</h2>
         <ul className={s.portfolio_projects}>{renderProjects()}</ul>
       </section>
     </motion.div>
