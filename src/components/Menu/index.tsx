@@ -20,6 +20,7 @@ const Menu: FC = () => {
         <IconButton aria-label='home' size='large'>
           <link.icon
             fontSize='inherit'
+            className={s.menu_linkIcon}
             color={location.pathname === link.to ? 'primary' : 'default'}
           />
         </IconButton>
