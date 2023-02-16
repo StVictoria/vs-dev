@@ -12,6 +12,6 @@ export interface IMenu {
 
 export const menu: IMenu[] = [
     { id: 1, title: 'Home', to: '/', icon: HomeIcon },
-    { id: 3, title: 'Portfolio', to: '/portfolio', icon: AccountBoxIcon },
-    { id: 4, title: 'Experience', to: '/experience', icon: WorkIcon },
+    { id: 2, title: 'Portfolio', to: '/portfolio', icon: AccountBoxIcon },
+    { id: 3, title: 'Experience', to: '/experience', icon: WorkIcon },
 ]

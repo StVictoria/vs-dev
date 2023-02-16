@@ -41,7 +41,7 @@ const Portfolio: FC = () => {
 
   const renderProjects = () =>
     projects.map((project: IProject) => (
-      <li className={s.portfolio_project}>
+      <li className={s.portfolio_project} key={project.id}>
         <Project
           img={project.img}
           title={project.title}
