@@ -16,7 +16,7 @@ const CompanyInfo: FC<ICompanyInfoProps> = ({
 }) => {
   const renderDescription = () =>
     description.map((descr: string) => (
-      <li className={s.descriptionItem}>{descr}</li>
+      <li className={s.descriptionItem} key={descr}>{descr}</li>
     ))
 
   return (
