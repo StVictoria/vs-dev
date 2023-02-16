@@ -8,12 +8,12 @@
         margin-left: -1.5vw
         opacity: 0
 
-@keyframes laptopDotPulseMedium
+@keyframes laptopDotPulseSmall
     100%
-        width: 6vw
-        height: 6vw
-        margin-top: -3vw
-        margin-left: -3vw
+        width: 12vw
+        height: 12vw
+        margin-top: -6vw
+        margin-left: -6vw
         opacity: 0
 
 @keyframes showAndHide
@@ -41,6 +41,7 @@
         align-items: center
         justify-content: center
         padding-bottom: 70vw
+        padding-top: 0
         overflow-y: auto
 
 .leftSide
@@ -133,11 +134,13 @@
 .avatar:hover .laptop .laptopCircle
     position: relative
     height: 2vw
+    @include adaptive(small)
+        height: 5vw
 
 .avatar:hover .laptop .laptopCircle::after
     animation: laptopDotPulse 1.3s ease 1s infinite
     @include adaptive(small)
-        animation: laptopDotPulseMedium 1.3s ease 1s infinite
+        animation: laptopDotPulseSmall 1.3s ease 1s infinite
 
 .avatar:hover
     .avatarWink
@@ -163,12 +166,15 @@
     background-color: white
     border-radius: 50%
     transition: 1s all
-    &::after
-        content: ''
-        position: absolute
-        top: 50%
-        left: 50%
-        width: 1px
-        height: 1px
-        background-color: white
-        border-radius: 50%
+    @include adaptive(small)
+        width: 5vw
+
+.laptopCircle::after
+    content: ''
+    position: absolute
+    top: 50%
+    left: 50%
+    width: 1px
+    height: 1px
+    background-color: white
+    border-radius: 50%

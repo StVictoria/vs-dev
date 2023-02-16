@@ -1,10 +1,12 @@
-@import '/src/styles/vars.sass'
+@import '/src/styles/mixins.sass'
 
 .companyInfo
     display: flex
     flex-direction: column
     align-items: center
     width: 25vw
+    @include adaptive(small)
+        width: 90vw
 
 .year
     background-color: $primary
@@ -12,10 +14,17 @@
     padding: 0.2vw 1vw
     color: white
     font-size: 1vw
+    @include adaptive(small)
+        font-size: 5vw
+        padding: 1vw 3vw
+        border-radius: 4vw
 
 .image
     height: 2vw
     margin: 1.8vw 0
+    @include adaptive(small)
+        height: 10vw
+        margin: 5vw 0
 
 .description
     display: flex
@@ -32,3 +41,5 @@
 
 .descriptionItem:not(:last-child)
     margin-bottom: 1vw
+    @include adaptive(small)
+        margin-bottom: 5vw

@@ -1,3 +1,5 @@
+@import '/src/styles/mixins.sass'
+    
 .experience
     display: flex
     flex-direction: column
@@ -11,20 +13,40 @@
     text-align: center
     margin-bottom: 3vw
     font-size: 1vw
+    @include adaptive(small)
+        font-size: 5vw
+        margin-bottom: 10vw
 
 .timeline
     display: flex
+    @include adaptive(small)
+        flex-direction: column
+        align-items: center
 
 .companyInfoWrapper
     position: relative
     &:not(:last-child)
         margin-right: 6vw
+        @include adaptive(small)
+            margin-right: 0
+            margin-bottom: 30vw
+
 
 .companyInfoWrapper:not(:last-child)::after
     content: ''
     position: absolute
-    top: 4vw
-    right: -6vw
-    background: url('../../assets/arrow.svg') center center / contain no-repeat
-    width: 6vw
-    height: 1vw
+    top: 3vw
+    right: -8.5vw
+    background: url('../../assets/arrow_down.svg') center center / contain no-repeat
+    transform: rotate(-90deg)
+    width: 10vw
+    height: 4vw
+    @include adaptive(small)
+        right: 50%
+        bottom: -25vw
+        top: unset
+        margin-right: -10vw
+        height: 20vw
+        width: 20vw
+        transform: rotate(0)
+        background: url('../../assets/arrow_down.svg') center center / contain no-repeat
