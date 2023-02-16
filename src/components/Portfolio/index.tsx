@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { factsAboutMe, IFactAboutMe } from '../../static/factsAboutMe'
 import s from './styles.module.sass'
@@ -8,6 +8,15 @@ import { IProject, projects } from '../../static/projects'
 import Project from '../Project'
 
 const Portfolio: FC = () => {
+  useEffect(() => {
+    const techsSlider = document.getElementById('techs_slider')
+    if (techsSlider) {
+      setTimeout(() => {
+        techsSlider.classList.add(s.animated)
+      }, 850)
+    }
+  }, [])
+
   const renderFactsAboutMe = () =>
     factsAboutMe.map((fact: IFactAboutMe) => (
       <li className={s.portfolio_fact} key={fact.id}>
@@ -57,7 +66,7 @@ const Portfolio: FC = () => {
       <section className={s.portfolio_block}>
         <h2>Technologies I use</h2>
         <div className={s.portfolio_techSliderWrapper}>
-          <ul className={s.portfolio_techs}>
+          <ul id='techs_slider' className={s.portfolio_techs}>
             {renderTechnologies()}
             {renderTechnologies()}
           </ul>

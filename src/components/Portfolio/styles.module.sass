@@ -58,7 +58,8 @@
 .portfolio_techs
     display: flex
     width: 400vw // (7vw+3vw) * 20 items * 2
-    animation: scroll 30s infinite linear
+    &.animated
+        animation: scroll 30s infinite linear
     &:hover
         animation-play-state: paused
 
