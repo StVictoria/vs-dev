@@ -1,3 +1,5 @@
+@import '/src/styles/mixins.sass'
+
 *
     box-sizing: border-box
 
@@ -29,6 +31,8 @@ p, ul, ol, li, a, h1
     margin: 0
     padding: 0
     font-size: 1.2vw
+    @include adaptive(small)
+        font-size: 2vw
 
 h2
     width: 100%
@@ -36,6 +40,9 @@ h2
     font-size: 1.7vw
     margin: 2vw 0
     text-align: center
+    @include adaptive(small)
+        font-size: 8vw
+        margin: 6vw 0
 
 ul, li
     list-style: none
@@ -52,3 +59,6 @@ a
     padding-top: 6vw
     padding-bottom: 12vw
     min-height: 100vh
+    @include adaptive(small)
+        padding-top: 24vw
+        padding-bottom: 40vw

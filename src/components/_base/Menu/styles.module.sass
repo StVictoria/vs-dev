@@ -1,3 +1,5 @@
+@import '/src/styles/mixins.sass'
+
 .menu
     position: fixed
     bottom: -100px
@@ -9,12 +11,18 @@
     border-radius: 10px
     z-index: 1000
     transition: 1s all
-    &.showed
-        bottom: 50px
-        transition: 1s all
+    @include adaptive(small)
+        display: flex
+        flex-wrap: nowrap
+
+.menu.showed
+    bottom: 50px
+    transition: 1s all
 
 .menu > a:not(:last-child)
     margin-right: 2vw
 
 .linkIcon
     font-size: 2vw!important
+    @include adaptive(small)
+        font-size: 10vw!important

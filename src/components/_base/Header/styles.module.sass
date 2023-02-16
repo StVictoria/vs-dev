@@ -1,3 +1,5 @@
+@import '/src/styles/mixins.sass'
+
 @keyframes switchMode
     0%
         top: -6px
@@ -19,16 +21,23 @@
     padding: 1.7vw
     z-index: 100
     background: linear-gradient(rgb(255,255,255), rgba(255,255,255,0.8), rgba(255,255,255,0.4),rgba(255,255,255,0))
-    &.showed
-        top: 0
-        transition: 1s all
+    @include adaptive(small)
+        padding: 3vw
+
+.header.showed
+    top: 0
+    transition: 1s all
 
 .logo
     width: 3vw
     height: 3vw
-    &:hover
-        transition: 1s transform
-        transform: rotate(360deg)
+    @include adaptive(small)
+        width: 14vw
+        height: 14vw
+
+.logo:hover
+    transition: 1s transform
+    transform: rotate(360deg)
 
 .socials
     display: flex
@@ -51,6 +60,9 @@
     background-position: center
     background-repeat: no-repeat
     background-size: contain
+    @include adaptive(small)
+        width: 10vw
+        height: 10vw
 
 .modeButton
     position: relative
@@ -58,6 +70,9 @@
     height: 2.8vw
     background: url('../../../assets/desert.svg') center center / contain no-repeat
     cursor: pointer
+    @include adaptive(small)
+        width: 14vw
+        height: 14vw
 
 .modeButton.disabled
     opacity: 0.5
@@ -72,6 +87,11 @@
     border-radius: 50%
     background-color: #ffce08
     z-index: -1
+    @include adaptive(small)
+        top: -0.6vw
+        right: 3vw
+        width: 4vw
+        height: 4vw
 
 .modeIcon.dark
     transition: 1s all
