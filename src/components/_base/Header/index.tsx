@@ -4,6 +4,7 @@ import { ISocial, socials } from '../../../static/socials'
 import s from './styles.module.sass'
 import logo from '../../../assets/logo.svg'
 import clsx from 'clsx'
+import { Tooltip } from '@mui/material'
 
 const Header: FC = () => {
   const [isDark, setIsDark] = useState(false)
@@ -32,18 +33,19 @@ const Header: FC = () => {
         <img className={s.header_logo} src={logo} alt='VS' />
       </Link>
       <ul className={s.header_socials}>{renderSocials()}</ul>
-      <button
-        className={clsx(s.header_modeButton, { [s.disabled]: true })}
-        // onClick={() => setIsDark(!isDark)}
-        title='In development 🙃'
-      >
-        <div
-          className={clsx(s.header_modeIcon, {
-            [s.dark]: isDark,
-            [s.light]: !isDark,
-          })}
-        />
-      </button>
+      <Tooltip title='In development 🙃'>
+        <button
+          className={clsx(s.header_modeButton, { [s.disabled]: true })}
+          // onClick={() => setIsDark(!isDark)}
+        >
+          <div
+            className={clsx(s.header_modeIcon, {
+              [s.dark]: isDark,
+              [s.light]: !isDark,
+            })}
+          />
+        </button>
+      </Tooltip>
     </div>
   )
 }
