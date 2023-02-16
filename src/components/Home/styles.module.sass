@@ -14,6 +14,16 @@
     100%
         opacity: 0
 
+// @keyframes waveHand
+//     25%
+//         transform: rotate(10deg)
+//     50%
+//         transform: rotate(0)
+//     75%
+//         transform: rotate(10deg)
+//     100%
+//         transform: rotate(0)
+
 .home
     display: flex
     justify-content: space-between
@@ -30,8 +40,25 @@
 .greeting, .ocupation, .myName
     font-size: 4vw
 
+// .greeting
+//     position: relative
+    // &::before
+    //     content: '👋'
+    //     position: absolute
+    //     top: 50%
+    //     left: -4vw
+    //     font-size: 2.7vw
+    //     margin-top: -1.8vw
+
+// .greeting:hover
+//     &::before
+//         animation: waveHand 1.6s
+
 .myName
     color: $primary
+
+.hand
+    font-size: 2.7vw
 
 .year
     margin-top: 1vw

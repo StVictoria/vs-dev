@@ -1,7 +1,30 @@
 .experience
     display: flex
-    justify-content: center
+    flex-direction: column
     align-items: center
+
+.title
+    margin-bottom: 1vw
+
+.sectionDescription
+    color: grey
+    text-align: center
+    margin-bottom: 3vw
+    font-size: 1vw
 
 .timeline
     display: flex
+
+.companyInfoWrapper
+    position: relative
+    &:not(:last-child)
+        margin-right: 6vw
+
+.companyInfoWrapper:not(:last-child)::after
+    content: ''
+    position: absolute
+    top: 4vw
+    right: -6vw
+    background: url('../../assets/arrow.svg') center center / contain no-repeat
+    width: 6vw
+    height: 1vw

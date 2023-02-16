@@ -1,5 +1,4 @@
 import { FC, useEffect } from 'react'
-import { motion } from 'framer-motion'
 import { factsAboutMe, IFactAboutMe } from '../../static/factsAboutMe'
 import s from './styles.module.sass'
 import { ITechnology, technologies } from '../../static/technologies'

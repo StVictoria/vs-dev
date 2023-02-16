@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { Link } from 'react-router-dom'
 import { ITech } from '../../../static/projects'
-import github from '../../assets/github.svg'
+import github from '../../../assets/github.svg'
 import s from './styles.module.sass'
 
 interface IProjectProps {
