@@ -1,18 +1,12 @@
 import { FC } from 'react'
-import { motion } from 'framer-motion'
 import s from './styles.module.sass'
+import MotionPage from '../_common/MotionPage'
 
 const Experience: FC = () => {
   return (
-    <motion.div
-      initial={{ x: '100%' }}
-      animate={{ x: 0 }}
-      exit={{ x: '-100%' }}
-      transition={{ duration: 0.7 }}
-      className={s.experience}
-    >
-      <div className={s.experience_timeline}>My way</div>
-    </motion.div>
+    <MotionPage className={s.experience}>
+      <div className={s.timeline}>My way</div>
+    </MotionPage>
   )
 }
 

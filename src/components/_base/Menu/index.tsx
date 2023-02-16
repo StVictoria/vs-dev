@@ -10,7 +10,7 @@ const Menu: FC = () => {
   useEffect(() => {
     const menu = document.getElementById('menu')
     setTimeout(() => {
-      menu?.classList.add(s.menu_showed)
+      menu?.classList.add(s.showed)
     }, 1000)
   }, [])
 
@@ -20,7 +20,7 @@ const Menu: FC = () => {
         <IconButton aria-label='home' size='large'>
           <link.icon
             fontSize='inherit'
-            className={s.menu_linkIcon}
+            className={s.linkIcon}
             color={location.pathname === link.to ? 'primary' : 'default'}
           />
         </IconButton>

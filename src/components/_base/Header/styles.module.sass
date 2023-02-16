@@ -19,52 +19,51 @@
     padding: 1.7vw
     z-index: 100
     background: linear-gradient(rgb(255,255,255), rgba(255,255,255,0.8), rgba(255,255,255,0.4),rgba(255,255,255,0))
+    &.showed
+        top: 0
+        transition: 1s all
 
-.header_showed
-    top: 0
-    transition: 1s all
-
-.header_logo
+.logo
     width: 3vw
     height: 3vw
     &:hover
         transition: 1s transform
         transform: rotate(360deg)
 
-.header_socials
+.socials
     display: flex
     justify-content: center
     align-items: center
 
-.header_socialIconWrapper
+.socialIconWrapper
     padding: 10px
     transition: 0.6s all
 
-.header_socialIconWrapper:hover
+.socialIconWrapper:hover
     transform: scale(1.2)
 
-.header_socialIconWrapper:not(:last-child)
+.socialIconWrapper:not(:last-child)
     margin-right: 1.2vw
 
-.header_socialIcon
+.socialIcon
     width: 2vw
     height: 2vw
     background-position: center
     background-repeat: no-repeat
     background-size: contain
 
-.header_modeButton
+.modeButton
     position: relative
     width: 2.8vw
     height: 2.8vw
     background: url('../../../assets/desert.svg') center center / contain no-repeat
     cursor: pointer
 
-.header_modeButton.disabled
+.modeButton.disabled
     opacity: 0.5
     cursor: default
 
-.header_modeIcon
+.modeIcon
     position: absolute
     top: -0.3vw
     right: 0.6vw
@@ -74,12 +73,12 @@
     background-color: #ffce08
     z-index: -1
 
-.header_modeIcon.dark
+.modeIcon.dark
     transition: 1s all
     background-color: grey
     animation: switchMode 1s
 
-.header_modeIcon.light
+.modeIcon.light
     transition: 1s all
     background-color: #ffce08
     animation: switchMode 1s

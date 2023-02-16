@@ -11,15 +11,15 @@ const Header: FC = () => {
 
   useEffect(() => {
     const header = document.getElementById('header')
-    header?.classList.add(s.header_showed)
+    header?.classList.add(s.showed)
   }, [])
 
   const renderSocials = () =>
     socials.map((social: ISocial) => (
-      <li key={social.id} className={s.header_socialIconWrapper}>
+      <li key={social.id} className={s.socialIconWrapper}>
         <Link to={social.to} target='_blank'>
           <img
-            className={`${s.header_socialIcon} ${social.title}`}
+            className={`${s.socialIcon} ${social.title}`}
             src={social.icon}
             alt={social.title}
           />
@@ -30,16 +30,16 @@ const Header: FC = () => {
   return (
     <div id='header' className={s.header}>
       <Link to='/'>
-        <img className={s.header_logo} src={logo} alt='VS' />
+        <img className={s.logo} src={logo} alt='VS' />
       </Link>
-      <ul className={s.header_socials}>{renderSocials()}</ul>
+      <ul className={s.socials}>{renderSocials()}</ul>
       <Tooltip title='In development 🙃'>
         <button
-          className={clsx(s.header_modeButton, { [s.disabled]: true })}
+          className={clsx(s.modeButton, { [s.disabled]: true })}
           // onClick={() => setIsDark(!isDark)}
         >
           <div
-            className={clsx(s.header_modeIcon, {
+            className={clsx(s.modeIcon, {
               [s.dark]: isDark,
               [s.light]: !isDark,
             })}

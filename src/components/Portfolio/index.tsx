@@ -5,24 +5,25 @@ import s from './styles.module.sass'
 import { ITechnology, technologies } from '../../static/technologies'
 import { Link } from 'react-router-dom'
 import { IProject, projects } from '../../static/projects'
-import Project from '../Project'
+import Project from '../_common/Project'
+import MotionPage from '../_common/MotionPage'
 
 const Portfolio: FC = () => {
   useEffect(() => {
-    const techsSlider = document.getElementById('techs_slider')
-    if (techsSlider) {
+    const techsTrack = document.getElementById('techs_track')
+    if (techsTrack) {
       setTimeout(() => {
-        techsSlider.classList.add(s.animated)
-      }, 850)
+        techsTrack.classList.add(s.animated)
+      }, 900)
     }
   }, [])
 
   const renderFactsAboutMe = () =>
     factsAboutMe.map((fact: IFactAboutMe) => (
-      <li className={s.portfolio_fact} key={fact.id}>
-        <fact.icon className={s.portfolio_factIcon} />
+      <li className={s.fact} key={fact.id}>
+        <fact.icon className={s.factIcon} />
         <p>{fact.title}</p>
-        <p className={s.portfolio_factDecr}>{fact.descr}</p>
+        <p className={s.factDecr}>{fact.descr}</p>
       </li>
     ))
 
@@ -30,10 +31,10 @@ const Portfolio: FC = () => {
     technologies.map((tech: ITechnology) => (
       <li
         key={tech.id}
-        className={s.portfolio_tech}
+        className={s.tech}
         style={{ backgroundColor: tech.color }}
       >
-        <Link to={tech.to} className={s.portfolio_techLink} target='_blank'>
+        <Link to={tech.to} className={s.techLink} target='_blank'>
           <img src={tech.img} alt={tech.name} />
         </Link>
       </li>
@@ -41,7 +42,7 @@ const Portfolio: FC = () => {
 
   const renderProjects = () =>
     projects.map((project: IProject) => (
-      <li className={s.portfolio_project} key={project.id}>
+      <li className={s.project} key={project.id}>
         <Project
           img={project.img}
           title={project.title}
@@ -52,31 +53,25 @@ const Portfolio: FC = () => {
     ))
 
   return (
-    <motion.div
-      initial={{ x: '100%' }}
-      animate={{ x: 0 }}
-      exit={{ x: '-100%' }}
-      transition={{ duration: 0.7 }}
-      className={s.portfolio}
-    >
-      <section className={s.portfolio_block}>
+    <MotionPage className={s.portfolio}>
+      <section className={s.block}>
         <h2>About me</h2>
-        <ul className={s.portfolio_facts}>{renderFactsAboutMe()}</ul>
+        <ul className={s.facts}>{renderFactsAboutMe()}</ul>
       </section>
-      <section className={s.portfolio_block}>
+      <section className={s.block}>
         <h2>Technologies I use</h2>
-        <div className={s.portfolio_techSliderWrapper}>
-          <ul id='techs_slider' className={s.portfolio_techs}>
+        <div className={s.techsSlider}>
+          <ul id='techs_track' className={s.techsTrack}>
             {renderTechnologies()}
             {renderTechnologies()}
           </ul>
         </div>
       </section>
-      <section className={s.portfolio_block}>
+      <section className={s.block}>
         <h2>Recent projects</h2>
-        <ul className={s.portfolio_projects}>{renderProjects()}</ul>
+        <ul className={s.projects}>{renderProjects()}</ul>
       </section>
-    </motion.div>
+    </MotionPage>
   )
 }
 

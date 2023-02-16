@@ -17,12 +17,8 @@
 .home
     display: flex
     justify-content: space-between
-    padding: min(8%, 8vw)
-    padding-top: 0
-    padding-bottom: 0
-    height: 90vh
 
-.home_left
+.leftSide
     display: flex
     flex-direction: column
     justify-content: center
@@ -31,24 +27,24 @@
     font-size: 4vw
     font-weight: bold
 
-.home_greeting, .home_ocupation, .home_myName
+.greeting, .ocupation, .myName
     font-size: 4vw
 
-.home_myName
+.myName
     color: $primary
 
-.home_year
+.year
     margin-top: 1vw
     font-size: 1.3vw
     font-weight: 400
     color: #a7a7a7
 
-.home_right
+.rightSide
     position: relative
     width: 50vw
     padding-left: 5vw
 
-.home_avatar, .home_avatarWink
+.avatar, .avatarWink
     position: absolute
     top: 50%
     width: 14vw
@@ -59,29 +55,29 @@
     margin-top: -8.7vw
     z-index: 0
 
-.home_avatar
+.avatar
     background-image: url('../../assets/avatar.svg')
 
-.home_avatarWink
+.avatarWink
     top: 58%
     opacity: 0
     background-image: url('../../assets/avatar_wink.svg')
 
-.home_avatar:hover
-    .home_laptop
+.avatar:hover
+    .laptop
         height: 8.4vw
         box-shadow: 4px -4px 6px rgba(255,255,255,0.7)
-        .home_laptopCircle
+        .laptopCircle
             position: relative
             height: 1vw
             &::after
                 animation: laptopDotPulse 1.3s ease 1s infinite
 
-.home_avatar:hover
-    .home_avatarWink
+.avatar:hover
+    .avatarWink
         animation: showAndHide 0.6s
 
-.home_laptop
+.laptop
     position: absolute
     bottom: 0
     left: 0
@@ -95,7 +91,7 @@
     border-radius: 5px
     transition: 1s all
 
-.home_laptopCircle
+.laptopCircle
     width: 1vw
     height: 1px
     background-color: white
