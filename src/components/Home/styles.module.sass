@@ -8,6 +8,12 @@
         margin-left: -1.5vw
         opacity: 0
 
+@keyframes showAndHide
+    50%
+        opacity: 1
+    100%
+        opacity: 0
+
 .home
     display: flex
     justify-content: space-between
@@ -42,12 +48,26 @@
     width: 50vw
     padding-left: 5vw
 
-.home_avatarWrapper
+.home_avatar, .home_avatarWink
     position: absolute
     top: 50%
-    margin-top: -8.5vw
+    width: 14vw
+    height: 15vw
+    background-position: center
+    background-size: contain
+    background-repeat: no-repeat
+    margin-top: -8.7vw
+    z-index: 0
 
-.home_avatarWrapper:hover
+.home_avatar
+    background-image: url('../../assets/avatar.svg')
+
+.home_avatarWink
+    top: 58%
+    opacity: 0
+    background-image: url('../../assets/avatar_wink.svg')
+
+.home_avatar:hover
     .home_laptop
         height: 8.4vw
         box-shadow: 4px -4px 6px rgba(255,255,255,0.7)
@@ -55,26 +75,18 @@
             position: relative
             height: 1vw
             &::after
-                content: ''
-                position: absolute
-                top: 50%
-                left: 50%
-                width: 1px
-                height: 1px
-                background-color: white
-                border-radius: 50%
                 animation: laptopDotPulse 1.3s ease 1s infinite
 
-.home_avatar
-    width: 14vw
-    height: 15vw
-    background: url('../../assets/avatar.svg') center center / contain no-repeat
+.home_avatar:hover
+    .home_avatarWink
+        animation: showAndHide 0.6s
 
 .home_laptop
     position: absolute
     bottom: 0
     left: 0
     right: 0
+    height: 0
     display: flex
     justify-content: center
     align-items: center
@@ -89,3 +101,12 @@
     background-color: white
     border-radius: 50%
     transition: 1s all
+    &::after
+        content: ''
+        position: absolute
+        top: 50%
+        left: 50%
+        width: 1px
+        height: 1px
+        background-color: white
+        border-radius: 50%

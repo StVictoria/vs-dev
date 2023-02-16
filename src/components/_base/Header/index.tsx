@@ -1,6 +1,6 @@
 import { FC, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { ISocial, socials } from '../../static/socials'
+import { ISocial, socials } from '../../../static/socials'
 import s from './styles.module.sass'
 import logo from '../../assets/logo.svg'
 import clsx from 'clsx'

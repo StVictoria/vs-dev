@@ -15,7 +15,11 @@ const Home: FC = () => {
       <div className={s.home_left}>
         <p className={s.home_greeting}>
           Hi, I'm{' '}
-          <Link to='https://github.com/StVictoria' className={s.home_myName} target="_blank">
+          <Link
+            to='https://github.com/StVictoria'
+            className={s.home_myName}
+            target='_blank'
+          >
             Viktoriia
           </Link>
         </p>
@@ -23,8 +27,8 @@ const Home: FC = () => {
         <p className={s.home_year}>Since 2019</p>
       </div>
       <div className={s.home_right}>
-        <div className={s.home_avatarWrapper}>
-          <div className={s.home_avatar} />
+        <div className={s.home_avatar}>
+          <div className={s.home_avatarWink} />
           <div className={s.home_laptop}>
             <div className={s.home_laptopCircle} />
           </div>

@@ -1,8 +1,8 @@
 import { FC } from 'react'
 import { Route, Routes, useLocation } from 'react-router-dom'
-import Home from '../Home'
-import Portfolio from '../Portfolio'
-import Experience from '../Experience'
+import Home from '../../Home'
+import Portfolio from '../../Portfolio'
+import Experience from '../../Experience'
 import { AnimatePresence } from 'framer-motion'
 
 const AnimatedRoutes: FC = () => {

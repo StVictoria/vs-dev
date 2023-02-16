@@ -1,7 +1,7 @@
 import { IconButton } from '@mui/material'
 import { FC, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { IMenu, menu } from '../../static/menu'
+import { IMenu, menu } from '../../../static/menu'
 import s from './styles.module.sass'
 
 const Menu: FC = () => {

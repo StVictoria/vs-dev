@@ -64,7 +64,7 @@ const Portfolio: FC = () => {
         </div>
       </section>
       <section className={s.portfolio_block}>
-        <h2>Some of the projects</h2>
+        <h2>Recent projects</h2>
         <ul className={s.portfolio_projects}>{renderProjects()}</ul>
       </section>
     </motion.div>
