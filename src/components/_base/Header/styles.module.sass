@@ -21,8 +21,8 @@
     padding: 1.7vw
     z-index: 100
     background: linear-gradient(rgb(255,255,255), rgba(255,255,255,0.8), rgba(255,255,255,0.4),rgba(255,255,255,0))
-    @include adaptive(small)
-        padding: 3vw
+    @include adaptive(medium)
+        padding: 10px
 
 .header.showed
     top: 0
@@ -31,9 +31,9 @@
 .logo
     width: 3vw
     height: 3vw
-    @include adaptive(small)
-        width: 14vw
-        height: 14vw
+    @include adaptive(medium)
+        width: 40px
+        height: 40px
 
 .logo:hover
     transition: 1s transform
@@ -60,9 +60,9 @@
     background-position: center
     background-repeat: no-repeat
     background-size: contain
-    @include adaptive(small)
-        width: 10vw
-        height: 10vw
+    @include adaptive(medium)
+        width: 30px
+        height: 30px
 
 .modeButton
     position: relative
@@ -70,9 +70,9 @@
     height: 2.8vw
     background: url('../../../assets/desert.svg') center center / contain no-repeat
     cursor: pointer
-    @include adaptive(small)
-        width: 14vw
-        height: 14vw
+    @include adaptive(medium)
+        width: 40px
+        height: 40px
 
 .modeButton.disabled
     opacity: 0.5
@@ -87,11 +87,11 @@
     border-radius: 50%
     background-color: #ffce08
     z-index: -1
-    @include adaptive(small)
-        top: -0.6vw
-        right: 3vw
-        width: 4vw
-        height: 4vw
+    @include adaptive(medium)
+        top: -7px
+        right: 10px
+        width: 14px
+        height: 14px
 
 .modeIcon.dark
     transition: 1s all
