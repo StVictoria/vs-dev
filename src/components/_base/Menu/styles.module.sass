@@ -18,6 +18,8 @@
 .menu.showed
     bottom: 50px
     transition: 1s all
+    @include adaptive(medium)
+        bottom: 30px
 
 .menu > a:not(:last-child)
     margin-right: 2vw

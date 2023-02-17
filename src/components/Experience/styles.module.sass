@@ -13,13 +13,13 @@
     text-align: center
     margin-bottom: 3vw
     font-size: 1vw
-    @include adaptive(small)
-        font-size: 5vw
-        margin-bottom: 10vw
+    @include adaptive(medium)
+        font-size: 16px
+        margin-bottom: 30px
 
 .timeline
     display: flex
-    @include adaptive(small)
+    @include adaptive(medium)
         flex-direction: column
         align-items: center
 
@@ -27,9 +27,9 @@
     position: relative
     &:not(:last-child)
         margin-right: 6vw
-        @include adaptive(small)
+        @include adaptive(medium)
             margin-right: 0
-            margin-bottom: 30vw
+            margin-bottom: 100px
 
 
 .companyInfoWrapper:not(:last-child)::after
@@ -41,12 +41,12 @@
     transform: rotate(-90deg)
     width: 10vw
     height: 4vw
-    @include adaptive(small)
+    @include adaptive(medium)
         right: 50%
-        bottom: -25vw
+        bottom: -80px
         top: unset
-        margin-right: -10vw
-        height: 20vw
-        width: 20vw
+        margin-right: -30px
+        height: 60px
+        width: 60px
         transform: rotate(0)
         background: url('../../assets/arrow_down.svg') center center / contain no-repeat
