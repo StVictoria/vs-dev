@@ -10,7 +10,7 @@
     0%
         transform: translateX(0)
     100%
-        transform: translateX(-800vw)
+        transform: translateX(-2800px)
 
 .portfolio
     display: flex
@@ -21,16 +21,15 @@
 
 .block:not(:last-child)
     margin-bottom: 4vw
-    @include adaptive(small)
-        margin-bottom: 15vw
+    @include adaptive(medium)
+        margin-bottom: 40px
 
 // about --------------------------------
 
 .facts
     display: flex
-    @include adaptive(small)
-        flex-direction: column
-        align-items: center
+    flex-wrap: wrap
+    justify-content: center
 
 .fact
     position: relative
@@ -41,10 +40,12 @@
     background-color: $primary
     color: white
     cursor: default
-    @include adaptive(small)
-        padding: 2vw 5vw
-        &:not(:last-child)
-            margin-bottom: 3vw
+    margin-bottom: 3vw
+    @include adaptive(medium)
+        padding: 6px 12px
+
+.fact:not(:last-child)
+    margin-right: 3vw
 
 .fact:hover
     .factDecr
@@ -52,18 +53,15 @@
 
 .fact p
     font-size: 1vw
-    @include adaptive(small)
-        font-size: 6vw
-
-.fact:not(:last-child)
-    margin-right: 3vw
+    @include adaptive(medium)
+        font-size: 18px
 
 .factIcon
     font-size: 1.5vw!important
     margin-right: 0.5vw
-    @include adaptive(small)
-        font-size: 6.4vw!important
-        margin-right: 2vw
+    @include adaptive(medium)
+        font-size: 25px!important
+        margin-right: 5px
 
 .factDecr
     position: absolute
@@ -82,13 +80,13 @@
 .techsTrack
     display: flex
     width: 400vw // (7vw+3vw) * 20 items * 2
-    @include adaptive(small)
-        width: 1600vw
+    @include adaptive(medium)
+        width: 5600px
 
 .techsTrack.animated
     animation: scroll 30s infinite linear
-    @include adaptive(small)
-         animation: scrollSmall 24s infinite linear
+    @include adaptive(medium)
+        animation: scrollSmall 24s infinite linear
 
 .techsTrack:hover
     animation-play-state: paused
@@ -100,11 +98,12 @@
     width: 7vw
     height: 7vw
     border-radius: 1vw
-    margin-left: 10vw
-    @include adaptive(small)
-        width: 30vw
-        height: 30vw
-        border-radius: 3vw
+    margin-left: 3vw
+    @include adaptive(medium)
+        width: 100px
+        height: 100px
+        border-radius: 10px
+        margin-left: 40px
 
 .tech:hover
     img
@@ -121,14 +120,13 @@
 .tech img
     transition: 0.6s all
     width: 3vw
-    @include adaptive(small)
-        width: 60%
+    @include adaptive(medium)
+        width: 30px
 
 .projects
     display: grid
     grid-template-columns: repeat(auto-fill, 40vw)
     gap: 5vw
-    @include adaptive(small)
-        grid-template-columns: repeat(auto-fill, 90vw)
-        gap: 14vw
-
+    @include adaptive(medium)
+        grid-template-columns: 100%
+        gap: 40px
