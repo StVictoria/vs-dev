@@ -3,7 +3,6 @@ import s from './App.module.sass'
 import AnimatedRoutes from './_base/AnimatedRoutes'
 import Menu from './_base/Menu'
 import Header from './_base/Header'
-import { useEffect } from 'react'
 
 function App() {
   return (

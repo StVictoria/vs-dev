@@ -28,8 +28,10 @@
 
 .facts
     display: flex
-    flex-wrap: wrap
     justify-content: center
+    @include adaptive(medium)
+        flex-direction: column
+        align-items: center
 
 .fact
     position: relative
@@ -40,21 +42,20 @@
     background-color: $primary
     color: white
     cursor: default
-    margin-bottom: 3vw
     @include adaptive(medium)
         padding: 6px 12px
+        margin-bottom: 3vw
 
 .fact:not(:last-child)
     margin-right: 3vw
+    @include adaptive(medium)
+        margin-right: 0
 
 .fact:hover
     .factDecr
         opacity: 1
-
-.fact p
-    font-size: 1vw
-    @include adaptive(medium)
-        font-size: 18px
+        @include adaptive(medium)
+            opacity: 0
 
 .factIcon
     font-size: 1.5vw!important
@@ -62,6 +63,11 @@
     @include adaptive(medium)
         font-size: 25px!important
         margin-right: 5px
+
+.fact p
+    font-size: 1vw
+    @include adaptive(medium)
+        font-size: 18px
 
 .factDecr
     position: absolute
