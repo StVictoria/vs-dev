@@ -29,10 +29,10 @@ export interface IProject {
 }
 
 export const projects: IProject[] = [
-    { id: 1, title: 'Lasles', img: lasles, githubLink: '/', techs: [{ id: 1, title: 'Preact', icon: preact, to: '/' }, { id: 2, title: 'SCSS', icon: sass, to: '/' }] },
-    { id: 2, title: 'Enver', img: enver, githubLink: '/', techs: [{ id: 1, title: 'Next.js', icon: next, to: '/' }, { id: 2, title: 'TypeScript', icon: ts, to: '/' }, { id: 3, title: 'SASS', icon: sass, to: '/' }] },
-    { id: 3, title: 'Qubly', img: qubly, githubLink: '/', techs: [{ id: 1, title: 'Next.js', icon: next, to: '/' }, { id: 2, title: 'TypeScript', icon: ts, to: '/' }, { id: 3, title: 'SASS', icon: sass, to: '/' }] },
-    { id: 4, title: 'Selfschool', img: selfschool, githubLink: '/', techs: [{ id: 1, title: 'Next.js', icon: next, to: '/' }, { id: 2, title: 'TypeScript', icon: ts, to: '/' }, { id: 3, title: 'Effector', icon: effector, to: '/' }, { id: 4, title: 'SASS', icon: sass, to: '/' }] },
-    { id: 5, title: 'CRYPTO LOTTO', img: cryptoLotto, githubLink: '/', techs: [{ id: 1, title: 'Next.js', icon: next, to: '/' }, { id: 2, title: 'TypeScript', icon: ts, to: '/' }, { id: 3, title: 'SASS', icon: sass, to: '/' }, { id: 4, title: 'Ethers', icon: ethers, to: '/' }] },
-    { id: 6, title: 'Viktoriia | Frontend developer', img: portfolio, githubLink: '/', techs: [{ id: 1, title: 'React', icon: react, to: '/' }, { id: 2, title: 'SASS', icon: sass, to: '/' }, { id: 3, title: 'MUI', icon: mui, to: '/' }] },
+    { id: 1, title: 'Lasles', img: lasles, githubLink: 'https://github.com/StVictoria/laslesVPN', techs: [{ id: 1, title: 'Preact', icon: preact, to: '/' }, { id: 2, title: 'SCSS', icon: sass, to: '/' }] },
+    { id: 2, title: 'Enver', img: enver, githubLink: 'https://github.com/StVictoria/enver', techs: [{ id: 1, title: 'Next.js', icon: next, to: '/' }, { id: 2, title: 'TypeScript', icon: ts, to: '/' }, { id: 3, title: 'SASS', icon: sass, to: '/' }] },
+    { id: 3, title: 'Qubly', img: qubly, githubLink: 'https://github.com/StVictoria/qubly', techs: [{ id: 1, title: 'Next.js', icon: next, to: '/' }, { id: 2, title: 'TypeScript', icon: ts, to: '/' }, { id: 3, title: 'SASS', icon: sass, to: '/' }] },
+    { id: 4, title: 'Selfschool', img: selfschool, githubLink: 'https://github.com/parta-dev/next_frontend', techs: [{ id: 1, title: 'Next.js', icon: next, to: '/' }, { id: 2, title: 'TypeScript', icon: ts, to: '/' }, { id: 3, title: 'Effector', icon: effector, to: '/' }, { id: 4, title: 'SASS', icon: sass, to: '/' }] },
+    { id: 5, title: 'CRYPTO LOTTO', img: cryptoLotto, githubLink: 'http://primolennyy.fvds.ru/crypto-loto/loto-frontend', techs: [{ id: 1, title: 'Next.js', icon: next, to: '/' }, { id: 2, title: 'TypeScript', icon: ts, to: '/' }, { id: 3, title: 'SASS', icon: sass, to: '/' }, { id: 4, title: 'Ethers', icon: ethers, to: '/' }] },
+    { id: 6, title: 'Viktoriia | Frontend developer', img: portfolio, githubLink: 'https://github.com/StVictoria/portfolio_new', techs: [{ id: 1, title: 'React', icon: react, to: '/' }, { id: 2, title: 'SASS', icon: sass, to: '/' }, { id: 3, title: 'MUI', icon: mui, to: '/' }] },
 ]

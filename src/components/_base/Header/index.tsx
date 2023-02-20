@@ -3,16 +3,23 @@ import { Link } from 'react-router-dom'
 import { ISocial, socials } from '../../../static/socials'
 import s from './styles.module.sass'
 import logo from '../../../assets/logo.svg'
-import clsx from 'clsx'
-import { Tooltip } from '@mui/material'
+import i18next from 'i18next'
+import enImg from '../../../assets/images/united-states.png'
+import ruImg from '../../../assets/images/russia.png'
 
 const Header: FC = () => {
-  const [isDark, setIsDark] = useState(false)
+  // const [isDark, setIsDark] = useState<boolean>(false)
+  const [isEnLang, setIsEnLang] = useState<boolean>(true)
 
   useEffect(() => {
     const header = document.getElementById('header')
     header?.classList.add(s.showed)
   }, [])
+
+  const handleLangChange = (isEn: boolean) => {
+    setIsEnLang(isEn)
+    i18next.changeLanguage(isEn ? 'en' : 'ru')
+  }
 
   const renderSocials = () =>
     socials.map((social: ISocial) => (
@@ -33,7 +40,7 @@ const Header: FC = () => {
         <img className={s.logo} src={logo} alt='VS' />
       </Link>
       <ul className={s.socials}>{renderSocials()}</ul>
-      <Tooltip title='In development 🙃'>
+      {/* <Tooltip title='In development 🙃'>
         <button
           className={clsx(s.modeButton, { [s.disabled]: true })}
           // onClick={() => setIsDark(!isDark)}
@@ -45,7 +52,14 @@ const Header: FC = () => {
             })}
           />
         </button>
-      </Tooltip>
+      </Tooltip> */}
+      <button onClick={() => handleLangChange(!isEnLang)}>
+        <img
+          src={isEnLang ? enImg : ruImg}
+          alt={isEnLang ? 'EN' : 'RU'}
+          className={s.langImg}
+        />
+      </button>
     </div>
   )
 }

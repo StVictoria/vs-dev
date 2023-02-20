@@ -2,13 +2,16 @@ import { FC } from 'react'
 import s from './styles.module.sass'
 import { Link } from 'react-router-dom'
 import MotionPage from '../_common/MotionPage'
+import { useTranslation } from 'react-i18next'
 
 const Home: FC = () => {
+  const { t, i18n } = useTranslation()
+
   return (
     <MotionPage className={s.home}>
       <div className={s.leftSide}>
         <p className={s.greeting}>
-          Hi, I'm{' '}
+          {t('greeting')}{' '}
           <Link
             to='https://github.com/StVictoria'
             className={s.myName}
