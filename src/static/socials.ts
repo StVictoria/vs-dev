@@ -1,6 +1,6 @@
-import githubIcon from '../assets/github.svg'
-import facebookIcon from '../assets/facebook.svg'
-import linkedinIcon from '../assets/linkedin.svg'
+import githubIcon from '../assets/icons/github.svg'
+import facebookIcon from '../assets/icons/facebook.svg'
+import linkedinIcon from '../assets/icons/linkedin.svg'
 
 export interface ISocial {
     id: number

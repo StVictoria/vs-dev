@@ -6,8 +6,11 @@ import { Link } from 'react-router-dom'
 import { IProject, projects } from '../../static/projects'
 import Project from '../_common/Project'
 import MotionPage from '../_common/MotionPage'
+import { useTranslation } from 'react-i18next'
 
 const Portfolio: FC = () => {
+  const { t } = useTranslation()
+
   useEffect(() => {
     const techsTrack = document.getElementById('techs_track')
     if (techsTrack) {
@@ -21,8 +24,8 @@ const Portfolio: FC = () => {
     factsAboutMe.map((fact: IFactAboutMe) => (
       <li className={s.fact} key={fact.id}>
         <fact.icon className={s.factIcon} />
-        <p>{fact.title}</p>
-        <p className={s.factDecr}>{fact.descr}</p>
+        <p>{t(fact.title)}</p>
+        <p className={s.factDecr}>{t(fact.descr)}</p>
       </li>
     ))
 
@@ -54,11 +57,11 @@ const Portfolio: FC = () => {
   return (
     <MotionPage className={s.portfolio}>
       <section className={s.block}>
-        <h2>About me</h2>
+        <h2>{t('aboutMe')}</h2>
         <ul className={s.facts}>{renderFactsAboutMe()}</ul>
       </section>
       <section className={s.block}>
-        <h2>Technologies I use</h2>
+        <h2>{t('techsIUse')}</h2>
         <div className={s.techsSlider}>
           <ul id='techs_track' className={s.techsTrack}>
             {renderTechnologies()}
@@ -67,7 +70,7 @@ const Portfolio: FC = () => {
         </div>
       </section>
       <section className={s.block}>
-        <h2>Recent projects</h2>
+        <h2>{t('recentProjects')}</h2>
         <ul className={s.projects}>{renderProjects()}</ul>
       </section>
     </MotionPage>

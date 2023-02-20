@@ -2,10 +2,10 @@ import { FC, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ISocial, socials } from '../../../static/socials'
 import s from './styles.module.sass'
-import logo from '../../../assets/logo.svg'
+import logo from '../../../assets/icons/logo.svg'
 import i18next from 'i18next'
-import enImg from '../../../assets/images/united-states.png'
-import ruImg from '../../../assets/images/russia.png'
+import enImg from '../../../assets/images/lang/en.png'
+import ruImg from '../../../assets/images/lang/ru.png'
 
 const Header: FC = () => {
   // const [isDark, setIsDark] = useState<boolean>(false)
