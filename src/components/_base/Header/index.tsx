@@ -6,10 +6,13 @@ import logo from '../../../assets/icons/logo.svg'
 import i18next from 'i18next'
 import enImg from '../../../assets/images/lang/en.png'
 import ruImg from '../../../assets/images/lang/ru.png'
+import { useTranslation } from 'react-i18next'
 
 const Header: FC = () => {
   // const [isDark, setIsDark] = useState<boolean>(false)
-  const [isEnLang, setIsEnLang] = useState<boolean>(true)
+
+  const { i18n } = useTranslation()
+  const [isEnLang, setIsEnLang] = useState<boolean>(i18n.language === 'en')
 
   useEffect(() => {
     const header = document.getElementById('header')
@@ -53,7 +56,10 @@ const Header: FC = () => {
           />
         </button>
       </Tooltip> */}
-      <button onClick={() => handleLangChange(!isEnLang)}>
+      <button
+        className={s.langButton}
+        onClick={() => handleLangChange(!isEnLang)}
+      >
         <img
           src={isEnLang ? enImg : ruImg}
           alt={isEnLang ? 'EN' : 'RU'}
