@@ -4,13 +4,19 @@
     0%
         transform: translateX(0)
     100%
-        transform: translateX(-200vw)
+        transform: translateX(-50%)
+
+@keyframes scrollMedium
+    0%
+        transform: translateX(0)
+    100%
+        transform: translateX(-260vw)
 
 @keyframes scrollSmall
     0%
         transform: translateX(0)
     100%
-        transform: translateX(-2800px)
+        transform: translateX(-460vw)
 
 .portfolio
     display: flex
@@ -85,14 +91,19 @@
 
 .techsTrack
     display: flex
-    width: 400vw // (7vw+3vw) * 20 items * 2
+    width: 200vw // (7vw+3vw) * 20 items * 2
     @include adaptive(medium)
-        width: 5600px
+        width: 360vw
+    @include adaptive(small)
+        width: 560vw
 
 .techsTrack.animated
-    animation: scroll 30s infinite linear
+    animation: scroll 30s alternate infinite linear
     @include adaptive(medium)
-        animation: scrollSmall 24s infinite linear
+        animation-name: scrollMedium
+        animation-duration: 15s
+    @include adaptive(small)
+        animation-name: scrollSmall
 
 .techsTrack:hover
     animation-play-state: paused
@@ -106,10 +117,15 @@
     border-radius: 1vw
     margin-left: 3vw
     @include adaptive(medium)
-        width: 100px
-        height: 100px
+        width: 14vw
+        height: 14vw
         border-radius: 10px
-        margin-left: 40px
+        margin-left: 4vw
+    @include adaptive(small)
+        width: 20vw
+        height: 20vw
+        border-radius: 10px
+        margin-left: 8vw
 
 .tech:hover
     img
@@ -127,7 +143,7 @@
     transition: 0.6s all
     width: 3vw
     @include adaptive(medium)
-        width: 30px
+        width: 70%
 
 .projects
     display: grid

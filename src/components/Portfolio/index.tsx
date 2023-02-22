@@ -65,7 +65,7 @@ const Portfolio: FC = () => {
         <div className={s.techsSlider}>
           <ul id='techs_track' className={s.techsTrack}>
             {renderTechnologies()}
-            {renderTechnologies()}
+            {/* {renderTechnologies()} */}
           </ul>
         </div>
       </section>
