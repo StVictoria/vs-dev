@@ -1,5 +1,5 @@
 import githubIcon from '../assets/icons/github.svg'
-import facebookIcon from '../assets/icons/facebook.svg'
+import telegramIcon from '../assets/icons/telegram.svg'
 import linkedinIcon from '../assets/icons/linkedin.svg'
 
 export interface ISocial {
@@ -24,8 +24,8 @@ export const socials: ISocial[] = [
     },
     {
         id: 3,
-        title: 'facebook',
-        icon: facebookIcon,
-        to: 'https://web.facebook.com/profile.php?id=100077507053270',
+        title: 'telegram',
+        icon: telegramIcon,
+        to: 'https://telegram.me/user_vic',
     },
 ]
