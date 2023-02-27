@@ -99,6 +99,8 @@
 
 .avatar, .avatarWink
     position: absolute
+    display: flex
+    justify-content: center
     top: 50%
     width: 14vw
     height: 15vw
@@ -124,6 +126,9 @@
     background-image: url('../../assets/icons/avatar_wink.svg')
     @include adaptive(medium)
         top: 0
+
+.avatar:hover .donwloadCVText
+    opacity: 1
 
 .avatar:hover .laptop
     height: 8.4vw
@@ -178,3 +183,11 @@
     height: 1px
     background-color: white
     border-radius: 50%
+
+.donwloadCVText
+    font-size: 1vw
+    text-align: center
+    color: #a7a7a7
+    margin-top: 110%
+    opacity: 0
+    transition: 0.6s

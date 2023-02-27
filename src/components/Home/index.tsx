@@ -3,9 +3,11 @@ import s from './styles.module.sass'
 import { Link } from 'react-router-dom'
 import MotionPage from '../_common/MotionPage'
 import { useTranslation } from 'react-i18next'
+import cvEng from '../../assets/files/cvEng.pdf'
+import cvRus from '../../assets/files/cvRus.pdf'
 
 const Home: FC = () => {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
 
   return (
     <MotionPage className={s.home}>
@@ -24,12 +26,18 @@ const Home: FC = () => {
         <p className={s.year}> {t('since')}</p>
       </div>
       <div className={s.rightSide}>
-        <div className={s.avatar}>
-          <div className={s.avatarWink} />
-          <div className={s.laptop}>
-            <div className={s.laptopCircle} />
+        <a
+          href={i18n.language === 'en' ? cvEng : cvRus}
+          download={t('myNameCV')}
+        >
+          <div className={s.avatar}>
+            <div className={s.avatarWink} />
+            <div className={s.laptop}>
+              <div className={s.laptopCircle} />
+            </div>
+            <p className={s.donwloadCVText}>{t('clickToDownloadCV')}</p>
           </div>
-        </div>
+        </a>
       </div>
     </MotionPage>
   )
