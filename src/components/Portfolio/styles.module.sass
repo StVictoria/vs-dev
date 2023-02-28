@@ -32,56 +32,15 @@
 
 // about --------------------------------
 
-.facts
-    display: flex
-    justify-content: center
-    @include adaptive(medium)
-        flex-direction: column
-        align-items: center
-
-.fact
-    position: relative
-    display: flex
-    align-items: center
-    padding: 0.4vw 1vw 0.5vw 0.9vw
-    border-radius: 10vw
-    background-color: $primary
-    color: white
-    cursor: default
-    @include adaptive(medium)
-        padding: 6px 12px
-        margin-bottom: 3vw
-
-.fact:not(:last-child)
-    margin-right: 3vw
-    @include adaptive(medium)
-        margin-right: 0
-
-.fact:hover
-    .factDecr
-        opacity: 1
-        @include adaptive(medium)
-            opacity: 0
-
-.factIcon
-    font-size: 1.5vw!important
-    margin-right: 0.5vw
-    @include adaptive(medium)
-        font-size: 20px!important
-        margin-right: 5px
-
-.fact p
-    font-size: 1vw
-    @include adaptive(medium)
-        font-size: 14px
-
-.factDecr
-    position: absolute
-    top: 110%
-    font-size: 1vw
+.aboutMeDescr
+    max-width: 40vw
+    text-align: center
     color: grey
-    opacity: 0
-    transition: 0.6s all
+    @include adaptive(medium)
+        font-size: 16px
+        max-width: 60vw
+    @include adaptive(small)
+        max-width: unset
 
 // technologies ------------------------
 

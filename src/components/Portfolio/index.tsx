@@ -1,5 +1,4 @@
 import { FC, useEffect } from 'react'
-import { factsAboutMe, IFactAboutMe } from '../../static/factsAboutMe'
 import s from './styles.module.sass'
 import { ITechnology, technologies } from '../../static/technologies'
 import { Link } from 'react-router-dom'
@@ -19,15 +18,6 @@ const Portfolio: FC = () => {
       }, 900)
     }
   }, [])
-
-  const renderFactsAboutMe = () =>
-    factsAboutMe.map((fact: IFactAboutMe) => (
-      <li className={s.fact} key={fact.id}>
-        <fact.icon className={s.factIcon} />
-        <p>{t(fact.title)}</p>
-        <p className={s.factDecr}>{t(fact.descr)}</p>
-      </li>
-    ))
 
   const renderTechnologies = () =>
     technologies.map((tech: ITechnology) => (
@@ -58,7 +48,11 @@ const Portfolio: FC = () => {
     <MotionPage className={s.portfolio}>
       <section className={s.block}>
         <h2>{t('aboutMe')}</h2>
-        <ul className={s.facts}>{renderFactsAboutMe()}</ul>
+        <p className={s.aboutMeDescr}>
+          {t('introduction1')} <br />
+          {t('introduction2')} <br />
+          {t('introduction3')} 🔥
+        </p>
       </section>
       <section className={s.block}>
         <h2>{t('techsIUse')}</h2>

@@ -14,7 +14,7 @@ interface IProjectProps {
 const Project: FC<IProjectProps> = ({ img, title, techs, githubLink }) => {
   const renderProjectTechs = (techs: ITech[]) =>
     techs.map((tech: ITech) => (
-      <Link to={tech.to} className={s.tech} key={tech.id}>
+      <Link to={tech.to} className={s.tech} key={tech.id} target="_blank">
         <img src={tech.icon} alt={tech.title} />
       </Link>
     ))
@@ -24,7 +24,7 @@ const Project: FC<IProjectProps> = ({ img, title, techs, githubLink }) => {
       <img className={s.image} src={img} alt={title} />
       <div className={s.links}>
         <div className={s.techs}>{renderProjectTechs(techs)}</div>
-        <Link className={s.gitLink} to={githubLink}>
+        <Link className={s.gitLink} to={githubLink} target="_blank">
           <img src={github} alt='Github' />
         </Link>
       </div>
