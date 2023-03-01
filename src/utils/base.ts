@@ -16,14 +16,15 @@ const generateGreeting = (isEng: boolean, time: number) => {
 export const generateConsoleMessage = (isEng: boolean) => {
     const time = new Date().getHours()
     const wishMessage = generateGreeting(isEng, time)
-    let msg = `%c ${isEng ? 'Wow, who do I see' : 'Ого, кого я вижу'} 👀 \n ${wishMessage}`
+    const aboutProject = (isEng ? 'Project code you can find here: ' : 'Код проекта Вы можете посмотреть здесь: ') + 'https://github.com/StVictoria/vs-dev'
+    let msg = `%c ${isEng ? 'Wow, who do I see' : 'Ого, кого я вижу'} 👀 \n ${wishMessage} \n ${aboutProject}`
     let styles = [
-        'font-size: 2vw',
+        'font-size: 1.4vw',
         'font-family: monospace',
         'background: white',
         'display: inline-block',
         'color: black',
-        'padding: 1vw 1vw',
+        'padding-top: 0.6vw',
     ].join(';')
     console.log(msg, styles)
 }

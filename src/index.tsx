@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import './styles/index.sass'
 import App from './components/App'
 import reportWebVitals from './reportWebVitals'
-import { handleAppLoaded } from './utils/base'
+import { generateConsoleMessage, handleAppLoaded } from './utils/base'
 import { createTheme, ThemeProvider } from '@mui/material'
 
 window.addEventListener('load', handleAppLoaded)
@@ -18,12 +18,18 @@ const theme = createTheme({
   },
 })
 
-root.render(
-  <React.StrictMode>
-    <ThemeProvider theme={theme}>
-      <App />
-    </ThemeProvider>
-  </React.StrictMode>
-)
+const renderer = () => {
+  generateConsoleMessage(true)
+
+  return root.render(
+    <React.StrictMode>
+      <ThemeProvider theme={theme}>
+        <App />
+      </ThemeProvider>
+    </React.StrictMode>
+  )
+}
+
+renderer()
 
 reportWebVitals()
