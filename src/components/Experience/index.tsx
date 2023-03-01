@@ -14,6 +14,7 @@ const Experience: FC = () => {
         <CompanyInfo
           year={exp.year}
           title={exp.title}
+          website={exp.website}
           image={exp.image}
           description={exp.description}
         />
