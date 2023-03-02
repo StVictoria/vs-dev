@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, useState } from 'react'
 import s from './styles.module.sass'
 import { Link } from 'react-router-dom'
 import MotionPage from '../_common/MotionPage'
@@ -6,8 +6,11 @@ import { useTranslation } from 'react-i18next'
 import cvEng from '../../assets/files/cvEng.pdf'
 import cvRus from '../../assets/files/cvRus.pdf'
 import { Button } from '@mui/material'
+import ContactModal from '../ContactModal'
 
 const Home: FC = () => {
+  const [isContactModalOpen, setIsContactModalOpen] = useState<boolean>(false)
+
   const { t, i18n } = useTranslation()
 
   return (
@@ -24,7 +27,16 @@ const Home: FC = () => {
           </Link>
         </p>
         <h1 className={s.ocupation}> {t('frontendDev')}</h1>
-        <Button className={s.contactButton} variant="contained">Contact me</Button>
+        <div className={s.contactBlock}>
+          <p className={s.contactText}>{t('feelFreeTo')}</p>{' '}
+          <Button
+            className={s.contactButton}
+            variant='contained'
+            onClick={() => setIsContactModalOpen(true)}
+          >
+            {t('contactMe')}
+          </Button>
+        </div>
       </div>
       <div className={s.rightSide}>
         <a
@@ -40,6 +52,10 @@ const Home: FC = () => {
           </div>
         </a>
       </div>
+      <ContactModal
+        isOpen={isContactModalOpen}
+        onClose={() => setIsContactModalOpen(false)}
+      />
     </MotionPage>
   )
 }

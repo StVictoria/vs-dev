@@ -1,5 +1,4 @@
 import HomeIcon from '@mui/icons-material/Home'
-// import AutoAwesomeMosaicIcon from '@mui/icons-material/AutoAwesomeMosaic'
 import WorkIcon from '@mui/icons-material/Work'
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 
