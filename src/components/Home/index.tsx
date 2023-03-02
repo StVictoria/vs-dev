@@ -24,7 +24,7 @@ const Home: FC = () => {
           </Link>
         </p>
         <h1 className={s.ocupation}> {t('frontendDev')}</h1>
-        <p className={s.year}> {t('since')}</p>
+        <Button className={s.contactButton} variant="contained">Contact me</Button>
       </div>
       <div className={s.rightSide}>
         <a
