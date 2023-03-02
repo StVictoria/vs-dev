@@ -4,7 +4,7 @@
     "frontendDev": "Frontend developer",
     "since": "Since 2019",
     "clickToDownloadCV": "Click to download CV",
-    "myNameCV": "Viktoriia Stepnova. CV",
+    "myNameCV": "Viktoriia Stepnova CV",
     "aboutMe": "About me",
     "introduction1": "I have 3 years of experience as a frontend dev, during which I have been creating SPA, landings, admin panels, and SSR websites.",
     "introduction2": "Also, I am self-motivated and able to work independently or as part of a team.",
@@ -17,11 +17,12 @@
     "taxComDescr1": "Provided consultation to users on internal programs and systems",
     "taxComDescr2": "Resolving issues as soon as possible",
     "taxComDescr3": "Worked with a team to ensure high-quality service to customers",
-    "t1ConsultingDescr1": "SPA development",
-    "t1ConsultingDescr2": "Сrafting projects from scratch and maintenance of created services",
-    "t1ConsultingDescr3": "Experience of work with banking services",
-    "t1ConsultingDescr4": "Collaborating with the team to refine and prioritize tasks",
+    "t1ConsultingDescr1": "Successfully passed a month internship and got an offer to join company as a frontend developer",
+    "t1ConsultingDescr2": "Сrafted projects from scratch and maintained created services",
+    "t1ConsultingDescr3": "Participated in a project related to the banking sector",
+    "t1ConsultingDescr4": "Collaborated with the team to refine and prioritize tasks",
     "qlabDescr1": "Developed ED-platform to build own courses, buy other’s and watch it",
     "qlabDescr2": "Experience with uploading and playing large videos",
-    "qlabDescr3": "Setting and distribution of tasks"
+    "qlabDescr3": "Setting and distribution of tasks",
+    "qlabDescr4": "Had cross-team experience to facilitate collaboration"
 }

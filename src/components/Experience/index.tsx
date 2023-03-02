@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, useEffect } from 'react'
 import s from './styles.module.sass'
 import MotionPage from '../_common/MotionPage'
 import { experience } from '../../static/experience'
@@ -8,9 +8,18 @@ import { useTranslation } from 'react-i18next'
 const Experience: FC = () => {
   const { t } = useTranslation()
 
+  useEffect(() => {
+    const infoWrappers = Array.from(
+      document.getElementsByClassName('companyInfoWrapper')
+    )
+    setTimeout(() => {
+      infoWrappers?.forEach((wrapper) => wrapper.classList.add(s.showArrows))
+    }, 1000)
+  }, [])
+
   const renderExperience = () =>
     experience.map((exp) => (
-      <li key={exp.id} className={s.companyInfoWrapper}>
+      <li key={exp.id} className={`${s.companyInfoWrapper} companyInfoWrapper ${exp.id}`}>
         <CompanyInfo
           year={exp.year}
           title={exp.title}
