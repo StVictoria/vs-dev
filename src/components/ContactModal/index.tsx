@@ -80,7 +80,7 @@ const ContactModal: FC<IContactModalProps> = ({ isOpen, onClose }) => {
 
   return (
     <Modal isOpen={isOpen} onClose={handleClose}>
-      {isSent ? (
+      {!isSent ? (
         <>
           <h2 className={s.title}>{t('contactForm')}</h2>
           <p className={s.text}>{t('contactFormDescr1')}</p>
@@ -127,12 +127,17 @@ const ContactModal: FC<IContactModalProps> = ({ isOpen, onClose }) => {
         </>
       ) : (
         <div className={s.successBlock}>
-          <h2 className={s.title}>✔️ {t('successfullySent')}!</h2>
-          <p className={s.text}>
-            {t('writeMeInSocials')}
-          </p>
+          <h2 className={s.title}>
+            <p className={s.successCheck}>✔️</p> {t('successfullySent')}!
+          </h2>
+          <p className={s.text}>{t('writeMeInSocials')}</p>
           <div className={s.socials}>{renderSocials()}</div>
-          <Button fullWidth variant='contained' onClick={handleClose}>
+          <Button
+            fullWidth
+            variant='contained'
+            className={s.okButton}
+            onClick={handleClose}
+          >
             {t('great')}
           </Button>
         </div>

@@ -1,3 +1,4 @@
+@import '/src/styles/mixins.sass'
 
 .modal
     position: relative
@@ -10,3 +11,8 @@
     position: absolute!important
     top: 0.5vw
     right: 0.5vw
+
+.closeIcon
+    font-size: 1.7vw!important
+    @include adaptive(medium)
+        font-size: 30px!important

@@ -83,16 +83,22 @@
     display: flex
     align-items: center
     justify-content: flex-end
+    @include adaptive(medium)
+        flex-direction: column
 
 .contactText
     color: $disabled
     margin-right: 1vw
     font-weight: 400
     margin-bottom: -1.8vw
+    @include adaptive(medium)
+        margin-bottom: 5px
 
 .contactButton
     margin-top: 2vw!important
     font-size: 1vw!important
+    @include adaptive(medium)
+        font-size: 12px!important
 
 .rightSide
     position: relative
@@ -167,7 +173,7 @@
     justify-content: center
     align-items: center
     height: 12px
-    background-color:   
+    background-color: #c6c6c6
     border-radius: 5px
     transition: 1s all
 

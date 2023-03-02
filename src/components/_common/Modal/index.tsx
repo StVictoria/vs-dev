@@ -47,7 +47,7 @@ const Modal: FC<IModalProps> = ({ children, isOpen, onClose }) => {
           className={s.closeButton}
           onClick={handleModalClose}
         >
-          <CloseIcon />
+          <CloseIcon className={s.closeIcon} />
         </IconButton>
       </Box>
     </MuiModal>

@@ -1,12 +1,22 @@
-@import '/src/styles/vars.sass'
+@import '/src/styles/mixins.sass'
     
 .title
+    display: flex
+    align-items: center
+    justify-content: center
     margin: 0
     margin-bottom: 1vw
+    @include adaptive(medium)
+        display: flex
+        flex-direction: column
+        margin-bottom: 10px
 
 .text
     text-align: center
     color: $disabled
+    @include adaptive(medium)
+        font-size: 16px
+        max-width: 300px
 
 .form
     display: flex
@@ -15,6 +25,8 @@
 
 .form .field
     margin-bottom: 1vw
+    @include adaptive(medium)
+        margin-bottom: 14px
 
 .error
     width: 100%
@@ -24,6 +36,14 @@
 
 .successBlock
     min-width: 300px
+    @include adaptive(medium)
+        padding: 10px
+        min-width: 250px
+
+.successCheck
+    font-size: 1.7vw
+    @include adaptive(medium)
+        font-size: 20px
 
 .socials
     display: flex
@@ -31,12 +51,24 @@
     align-items: center
     width: 100%
     margin: 1vw 0
+    @include adaptive(medium)
+        margin: 14px 0
 
 .socialIconWrapper:not(:last-child)
     margin-right: 2vw
+    @include adaptive(medium)
+        margin-right: 30px
 
 .socialIcon
     width: 2vw
     height: 2vw
+    @include adaptive(medium)
+        width: 30px
+        height: 30px
+    
+.okButton
+    font-size: 1vw!important
+    @include adaptive(medium)
+        font-size: 14px!important
 
 
