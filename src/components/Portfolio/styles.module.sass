@@ -4,19 +4,19 @@
     0%
         transform: translateX(0)
     100%
-        transform: translateX(-50%)
+        transform: translateX(-113vw) // 110 + 3 of margin
 
 @keyframes scrollMedium
     0%
         transform: translateX(0)
     100%
-        transform: translateX(-260vw)
+        transform: translateX(-282vw)
 
 @keyframes scrollSmall
     0%
         transform: translateX(0)
     100%
-        transform: translateX(-460vw)
+        transform: translateX(-496vw)
 
 .portfolio
     display: flex
@@ -50,11 +50,11 @@
 
 .techsTrack
     display: flex
-    width: 200vw // (7vw+3vw) * 20 items * 2
+    width: 210vw // (7vw+3vw) * 20
     @include adaptive(medium)
-        width: 360vw
+        width: 378vw
     @include adaptive(small)
-        width: 560vw
+        width: 588vw
 
 .techsTrack.animated
     animation: scroll 15s alternate infinite linear

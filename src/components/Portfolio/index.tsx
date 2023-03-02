@@ -1,6 +1,6 @@
 import { FC, useEffect } from 'react'
 import s from './styles.module.sass'
-import { ITechnology, technologies } from '../../static/technologies'
+import { ITool, tools } from '../../static/tools'
 import { Link } from 'react-router-dom'
 import { IProject, projects } from '../../static/projects'
 import Project from '../_common/Project'
@@ -20,7 +20,7 @@ const Portfolio: FC = () => {
   }, [])
 
   const renderTechnologies = () =>
-    technologies.map((tech: ITechnology) => (
+    tools.map((tech: ITool) => (
       <li
         key={tech.id}
         className={s.tech}
@@ -55,7 +55,7 @@ const Portfolio: FC = () => {
         </p>
       </section>
       <section className={s.block}>
-        <h2>{t('techsIUse')}</h2>
+        <h2>{t('toolsIUse')}</h2>
         <div className={s.techsSlider}>
           <ul id='techs_track' className={s.techsTrack}>
             {renderTechnologies()}
