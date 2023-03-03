@@ -78,6 +78,10 @@ const ContactModal: FC<IContactModalProps> = ({ isOpen, onClose }) => {
       </li>
     ))
 
+  const renderFieldError = (message: string) => {
+    return <p className={s.fieldError}>{message}</p>
+  }
+
   return (
     <Modal isOpen={isOpen} onClose={handleClose}>
       {!isSent ? (
@@ -86,29 +90,48 @@ const ContactModal: FC<IContactModalProps> = ({ isOpen, onClose }) => {
           <p className={s.text}>{t('contactFormDescr1')}</p>
           <p className={s.text}>{t('contactFormDescr2')} 🙂</p>
           <form ref={form} className={s.form} onSubmit={handleSubmit(onSubmit)}>
-            <TextField
-              label={t('yourName')}
-              {...register('name', { required: true })}
-              error={!!errors.name}
-              variant='outlined'
-              className={s.field}
-            />
-            <TextField
-              label={t('yourEmail')}
-              {...register('email', { required: true })}
-              error={!!errors.email}
-              variant='outlined'
-              className={s.field}
-            />
-            <TextField
-              label={t('yourMessage')}
-              {...register('message', { required: true })}
-              error={!!errors.message}
-              multiline
-              rows={3}
-              variant='outlined'
-              className={s.field}
-            />
+            <div className={s.fieldWrapper}>
+              <TextField
+                label={t('yourName')}
+                {...register('name', {
+                  required: `${t('fillTheField')}. ${t('minLength')} 2`,
+                  minLength: 2,
+                })}
+                error={!!errors.name}
+                variant='outlined'
+                className={s.field}
+              />
+              {errors.name?.message && renderFieldError(errors.name?.message)}
+            </div>
+
+            <div className={s.fieldWrapper}>
+              <TextField
+                label={t('yourEmail')}
+                {...register('email', {
+                  required: t('enterCorrectEmail') || '',
+                  pattern: /[a-z0-9-]+@[a-z0-9-]+\.[a-z]{2,20}$/,
+                })}
+                error={!!errors.email}
+                variant='outlined'
+                className={s.field}
+              />
+              {errors.email?.message && renderFieldError(errors.email?.message)}
+            </div>
+
+            <div className={s.fieldWrapper}>
+              <TextField
+                label={t('yourMessage')}
+                {...register('message', { required: t('fillTheField') || '' })}
+                error={!!errors.message}
+                multiline
+                rows={3}
+                variant='outlined'
+                className={s.field}
+              />
+              {errors.message?.message &&
+                renderFieldError(errors.message?.message)}
+            </div>
+
             <Button
               fullWidth
               type='submit'
