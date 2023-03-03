@@ -1,5 +1,5 @@
 import { Button, CircularProgress, TextField } from '@mui/material'
-import { FC, useRef, useState } from 'react'
+import { ChangeEvent, FC, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import Modal from '../_common/Modal'
 import s from './styles.module.sass'
@@ -12,6 +12,7 @@ import {
 } from '../../constants/emailService'
 import { ISocial, socials_modal } from '../../static/socials'
 import { Link } from 'react-router-dom'
+import { CONTACT_FIELDS } from '../../constants/CONTACT_FIELDS'
 
 interface IContactModalProps {
   isOpen: boolean
@@ -24,6 +25,11 @@ type FormData = {
   message: string
 }
 
+type contactFieldType =
+  | CONTACT_FIELDS.NAME
+  | CONTACT_FIELDS.EMAIL
+  | CONTACT_FIELDS.MESSAGE
+
 const ContactModal: FC<IContactModalProps> = ({ isOpen, onClose }) => {
   const [isSending, setIsSending] = useState<boolean>(false)
   const [isSent, setIsSent] = useState<boolean>(false)
@@ -33,6 +39,7 @@ const ContactModal: FC<IContactModalProps> = ({ isOpen, onClose }) => {
     register,
     handleSubmit,
     reset,
+    setValue,
     formState: { errors },
   } = useForm<FormData>()
 
@@ -43,6 +50,14 @@ const ContactModal: FC<IContactModalProps> = ({ isOpen, onClose }) => {
     setError('')
     setIsSent(false)
     onClose()
+  }
+
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+    field: contactFieldType
+  ) => {
+    const value = e.target.value
+    return setValue(field, value.trimStart().replace(/  +/g, ' '))
   }
 
   const onSubmit = () => {
@@ -102,6 +117,7 @@ const ContactModal: FC<IContactModalProps> = ({ isOpen, onClose }) => {
                 error={!!errors.name}
                 variant='outlined'
                 className={s.field}
+                onChange={(e) => handleChange(e, CONTACT_FIELDS.NAME)}
               />
               {errors.name?.message && renderFieldError(errors.name?.message)}
             </div>
@@ -116,6 +132,7 @@ const ContactModal: FC<IContactModalProps> = ({ isOpen, onClose }) => {
                 error={!!errors.email}
                 variant='outlined'
                 className={s.field}
+                onChange={(e) => handleChange(e, CONTACT_FIELDS.EMAIL)}
               />
               {errors.email?.message && renderFieldError(errors.email?.message)}
             </div>
@@ -131,6 +148,7 @@ const ContactModal: FC<IContactModalProps> = ({ isOpen, onClose }) => {
                 rows={3}
                 variant='outlined'
                 className={s.field}
+                onChange={(e) => handleChange(e, CONTACT_FIELDS.MESSAGE)}
               />
               {errors.message?.message &&
                 renderFieldError(errors.message?.message)}
