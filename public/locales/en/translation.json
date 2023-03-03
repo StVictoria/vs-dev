@@ -1,43 +1,58 @@
 {
-    "greeting": "Hi! I'm",
-    "viktoriia": "Viktoriia",
-    "frontendDev": "Frontend developer",
-    "contactMe": "Contact me",
-    "feelFreeTo": "Feel free to",
-    "contactForm": "Contact form",
-    "contactFormDescr1": "Do you want to collaborate or just to leave a review?",
-    "contactFormDescr2": "Anyway, feel free to message me",
-    "yourName": "Your name",
-    "yourEmail": "Your email",
-    "yourMessage": "Your message",
-    "send": "Send",
-    "oopsError": "Oops, an error has occurred",
-    "successfullySent": "Successfully sent",
-    "writeMeInSocials": "Also you can write me in socials",
-    "great": "Great",
-    "fillTheField": "Fill the field",
-    "minLength": "Min length is",
-    "enterCorrectEmail": "Enter correct email",
-    "clickToDownloadCV": "Click to download CV",
-    "myNameCV": "Viktoriia Stepnova CV",
-    "aboutMe": "About me",
-    "introduction1": "I have 3 years of experience as a frontend dev, during which I have been creating SPA, landings, admin panels, and SSR websites.",
-    "introduction2": "Also, I am self-motivated and able to work independently or as part of a team.",
-    "introduction3": "Excited about blockchain and 3D",
-    "toolsIUse": "Tools I use",
-    "recentProjects": "Recent projects",
-    "myWay": "My way",
-    "myWayDescrLine1": "Here you can see a brief overview",
-    "myWayDescrLine2": " of my experience in every company",
-    "taxComDescr1": "Provided consultation to users on internal programs and systems",
-    "taxComDescr2": "Resolving issues as soon as possible",
-    "taxComDescr3": "Worked with a team to ensure high-quality service to customers",
-    "t1ConsultingDescr1": "Successfully passed a month internship and got an offer to join company as a frontend developer",
-    "t1ConsultingDescr2": "Сrafted projects from scratch and maintained created services",
-    "t1ConsultingDescr3": "Participated in a project related to the banking sector",
-    "t1ConsultingDescr4": "Collaborated with the team to refine and prioritize tasks",
-    "qlabDescr1": "Developed ED-platform to build own courses, buy other’s and watch it",
-    "qlabDescr2": "Experience with uploading and playing large videos",
-    "qlabDescr3": "Setting and distribution of tasks",
-    "qlabDescr4": "Had cross-team experience to facilitate collaboration"
+    "home": {
+        "greeting": "Hi! I'm",
+        "viktoriia": "Viktoriia",
+        "frontendDev": "Frontend developer",
+        "contactMe": "Contact me",
+        "feelFreeTo": "Feel free to",
+        "clickToDownloadCV": "Click to download CV",
+        "myNameCV": "Viktoriia Stepnova CV",
+        "contactForm": {
+            "title": "Contact form",
+            "descr1": "Do you want to collaborate or just to leave a review?",
+            "descr2": "Anyway, feel free to message me",
+            "nameTitle": "Your name",
+            "emailTitle": "Your email",
+            "messageTitle": "Your message",
+            "submitTitle": "Send",
+            "sendFormError": "Oops, an error has occurred",
+            "successTitle": "Successfully sent",
+            "writeMeInSocials": "Also you can write me in socials",
+            "successSubmitTitle": "Great",
+            "fillTheField": "Fill the field",
+            "minLength": "Min length is",
+            "enterCorrectEmail": "Enter correct email"
+        }
+    },
+    "portfolio": {
+        "abouttitle": "About me",
+        "introduction1": "I have 3 years of experience as a frontend dev, during which I have been creating SPA, landings, admin panels, and SSR websites.",
+        "introduction2": "Also, I am self-motivated and able to work independently or as part of a team.",
+        "introduction3": "Excited about blockchain and 3D",
+        "toolsTitle": "Tools I use",
+        "projectsTitle": "Recent projects"
+    },
+   
+    "experience": {
+        "title": "My way",
+        "descr1": "Here you can see a brief overview",
+        "descr2": " of my experience in every company",
+        "taxcom": {
+            "descr1": "Provided consultation to users on internal programs and systems",
+            "descr2": "Resolving issues as soon as possible",
+            "descr3": "Worked with a team to ensure high-quality service to customers"
+        },
+        "t1": {
+            "descr1": "Successfully passed a month internship and got an offer to join company as a frontend developer",
+            "descr2": "Сrafted projects from scratch and maintained created services",
+            "descr3": "Participated in a project related to the banking sector",
+            "descr4": "Collaborated with the team to refine and prioritize tasks"
+        },
+        "qlab": {
+            "descr1": "Developed ED-platform to build own courses, buy other’s and watch it",
+            "descr2": "Experience with uploading and playing large videos",
+            "descr3": "Setting and distribution of tasks",
+            "descr4": "Had cross-team experience to facilitate collaboration"
+        }
+    }
 }

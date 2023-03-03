@@ -86,15 +86,17 @@ const ContactModal: FC<IContactModalProps> = ({ isOpen, onClose }) => {
     <Modal isOpen={isOpen} onClose={handleClose}>
       {!isSent ? (
         <>
-          <h2 className={s.title}>{t('contactForm')}</h2>
-          <p className={s.text}>{t('contactFormDescr1')}</p>
-          <p className={s.text}>{t('contactFormDescr2')} 🙂</p>
+          <h2 className={s.title}>{t('home.contactForm.title')}</h2>
+          <p className={s.text}>{t('home.contactForm.descr1')}</p>
+          <p className={s.text}>{t('home.contactForm.descr2')} 🙂</p>
           <form ref={form} className={s.form} onSubmit={handleSubmit(onSubmit)}>
             <div className={s.fieldWrapper}>
               <TextField
-                label={t('yourName')}
+                label={t('home.contactForm.nameTitle')}
                 {...register('name', {
-                  required: `${t('fillTheField')}. ${t('minLength')} 2`,
+                  required: `${t('home.contactForm.fillTheField')}. ${t(
+                    'home.contactForm.minLength'
+                  )} 2`,
                   minLength: 2,
                 })}
                 error={!!errors.name}
@@ -106,9 +108,9 @@ const ContactModal: FC<IContactModalProps> = ({ isOpen, onClose }) => {
 
             <div className={s.fieldWrapper}>
               <TextField
-                label={t('yourEmail')}
+                label={t('home.contactForm.emailTitle')}
                 {...register('email', {
-                  required: t('enterCorrectEmail') || '',
+                  required: t('home.contactForm.enterCorrectEmail') || '',
                   pattern: /[a-z0-9-]+@[a-z0-9-]+\.[a-z]{2,20}$/,
                 })}
                 error={!!errors.email}
@@ -120,8 +122,10 @@ const ContactModal: FC<IContactModalProps> = ({ isOpen, onClose }) => {
 
             <div className={s.fieldWrapper}>
               <TextField
-                label={t('yourMessage')}
-                {...register('message', { required: t('fillTheField') || '' })}
+                label={t('home.contactForm.messageTitle')}
+                {...register('message', {
+                  required: t('home.contactForm.fillTheField') || '',
+                })}
                 error={!!errors.message}
                 multiline
                 rows={3}
@@ -142,18 +146,23 @@ const ContactModal: FC<IContactModalProps> = ({ isOpen, onClose }) => {
               {isSending ? (
                 <CircularProgress color='inherit' size={20} />
               ) : (
-                t('send')
+                t('home.contactForm.submitTitle')
               )}
             </Button>
-            {error && <p className={s.error}>{t('oopsError')} :(</p>}
+            {error && (
+              <p className={s.error}>
+                {t('home.contactForm.sendFormError')} :(
+              </p>
+            )}
           </form>
         </>
       ) : (
         <div className={s.successBlock}>
           <h2 className={s.title}>
-            <p className={s.successCheck}>✔️</p> {t('successfullySent')}!
+            <p className={s.successCheck}>✔️</p>{' '}
+            {t('home.contactForm.successTitle')}!
           </h2>
-          <p className={s.text}>{t('writeMeInSocials')}</p>
+          <p className={s.text}>{t('home.contactForm.writeMeInSocials')}</p>
           <div className={s.socials}>{renderSocials()}</div>
           <Button
             fullWidth
@@ -161,7 +170,7 @@ const ContactModal: FC<IContactModalProps> = ({ isOpen, onClose }) => {
             className={s.okButton}
             onClick={handleClose}
           >
-            {t('great')}
+            {t('home.contactForm.successSubmitTitle')}
           </Button>
         </div>
       )}

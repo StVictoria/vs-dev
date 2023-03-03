@@ -17,38 +17,38 @@ const Home: FC = () => {
     <MotionPage className={s.home}>
       <div className={s.leftSide}>
         <p className={s.greeting}>
-          {t('greeting')}&nbsp;
+          {t('home.greeting')}&nbsp;
           <Link
             to='https://github.com/StVictoria'
             className={s.myName}
             target='_blank'
           >
-            {t('viktoriia')}
+            {t('home.viktoriia')}
           </Link>
         </p>
-        <h1 className={s.ocupation}> {t('frontendDev')}</h1>
+        <h1 className={s.ocupation}> {t('home.frontendDev')}</h1>
         <div className={s.contactBlock}>
-          <p className={s.contactText}>{t('feelFreeTo')}</p>{' '}
+          <p className={s.contactText}>{t('home.feelFreeTo')}</p>{' '}
           <Button
             className={s.contactButton}
             variant='contained'
             onClick={() => setIsContactModalOpen(true)}
           >
-            {t('contactMe')}
+            {t('home.contactMe')}
           </Button>
         </div>
       </div>
       <div className={s.rightSide}>
         <a
           href={i18n.language === 'en' ? cvEng : cvRus}
-          download={t('myNameCV')}
+          download={t('home.myNameCV')}
         >
           <div className={s.avatar}>
             <div className={s.avatarWink} />
             <div className={s.laptop}>
               <div className={s.laptopCircle} />
             </div>
-            <p className={s.donwloadCVText}>{t('clickToDownloadCV')}</p>
+            <p className={s.donwloadCVText}>{t('home.clickToDownloadCV')}</p>
           </div>
         </a>
       </div>
