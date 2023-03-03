@@ -25,14 +25,13 @@
         }
     },
     "portfolio": {
-        "abouttitle": "About me",
+        "aboutTitle": "About me",
         "introduction1": "I have 3 years of experience as a frontend dev, during which I have been creating SPA, landings, admin panels, and SSR websites.",
         "introduction2": "Also, I am self-motivated and able to work independently or as part of a team.",
         "introduction3": "Excited about blockchain and 3D",
         "toolsTitle": "Tools I use",
         "projectsTitle": "Recent projects"
     },
-   
     "experience": {
         "title": "My way",
         "descr1": "Here you can see a brief overview",

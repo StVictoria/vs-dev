@@ -47,15 +47,15 @@ const Portfolio: FC = () => {
   return (
     <MotionPage className={s.portfolio}>
       <section className={s.block}>
-        <h2>{t('aboutMe')}</h2>
+        <h2>{t('portfolio.aboutTitle')}</h2>
         <p className={s.aboutMeDescr}>
-          {t('introduction1')} <br />
-          {t('introduction2')} <br />
-          {t('introduction3')} 🔥
+          {t('portfolio.introduction1')} <br />
+          {t('portfolio.introduction2')} <br />
+          {t('portfolio.introduction3')} 🔥
         </p>
       </section>
       <section className={s.block}>
-        <h2>{t('toolsIUse')}</h2>
+        <h2>{t('portfolio.toolsTitle')}</h2>
         <div className={s.techsSlider}>
           <ul id='techs_track' className={s.techsTrack}>
             {renderTechnologies()}
@@ -63,7 +63,7 @@ const Portfolio: FC = () => {
         </div>
       </section>
       <section className={s.block}>
-        <h2>{t('recentProjects')}</h2>
+        <h2>{t('portfolio.projectsTitle')}</h2>
         <ul className={s.projects}>{renderProjects()}</ul>
       </section>
     </MotionPage>

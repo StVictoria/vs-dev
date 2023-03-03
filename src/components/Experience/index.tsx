@@ -32,9 +32,9 @@ const Experience: FC = () => {
 
   return (
     <MotionPage className={s.experience}>
-      <h2 className={s.title}>{t('myWay')}</h2>
+      <h2 className={s.title}>{t('experience.title')}</h2>
       <p className={s.sectionDescription}>
-        {t('myWayDescrLine1')} <br /> {t('myWayDescrLine2')}
+        {t('experience.descr1')} <br /> {t('experience.descr2')}
       </p>
       <ul className={s.timeline}>{renderExperience()}</ul>
     </MotionPage>
