@@ -107,6 +107,17 @@ const Form: FC<IFormProps> = ({ setIsSent, error, setError }) => {
 
       <div className={s.fieldWrapper}>
         <TextField
+          label={t('home.contactForm.destinationTitle')}
+          disabled
+          variant='outlined'
+          value={t('home.contactForm.destinationValue')}
+          title={t('home.contactForm.destinationTip') || ''}
+          className={s.field}
+        />
+      </div>
+
+      <div className={s.fieldWrapper}>
+        <TextField
           label={t('home.contactForm.messageTitle')}
           {...register(CONTACT_FIELDS.MESSAGE, {
             required: t('home.contactForm.fillTheField') || '',
