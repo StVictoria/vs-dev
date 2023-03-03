@@ -19,7 +19,7 @@ interface IContactModalProps {
   onClose: () => void
 }
 
-type FormData = {
+type FormValues = {
   name: string
   email: string
   message: string
@@ -41,7 +41,7 @@ const ContactModal: FC<IContactModalProps> = ({ isOpen, onClose }) => {
     reset,
     setValue,
     formState: { errors },
-  } = useForm<FormData>()
+  } = useForm<FormValues>()
 
   const { t } = useTranslation()
   const form = useRef<HTMLFormElement>(null)
@@ -57,26 +57,29 @@ const ContactModal: FC<IContactModalProps> = ({ isOpen, onClose }) => {
     field: contactFieldType
   ) => {
     const value = e.target.value
-    return setValue(field, value.trimStart().replace(/  +/g, ' '))
+    setValue(
+      field as keyof FormValues,
+      value.trimStart().replace(/  +/g, ' ') as string
+    )
   }
 
-  const onSubmit = () => {
+  const onSubmit = async () => {
     if (form.current) {
       setIsSending(true)
-      emailjs
-        .sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
-        .then(
-          (result: any) => {
-            setIsSent(true)
-            reset()
-          },
-          (error: any) => {
-            setError(error.text)
-          }
+      try {
+        await emailjs.sendForm(
+          SERVICE_ID,
+          TEMPLATE_ID,
+          form.current,
+          PUBLIC_KEY
         )
-        .finally(() => {
-          setIsSending(false)
-        })
+        setIsSent(true)
+        reset()
+      } catch (error: any) {
+        setError(error.text)
+      } finally {
+        setIsSending(false)
+      }
     }
   }
 
@@ -108,16 +111,17 @@ const ContactModal: FC<IContactModalProps> = ({ isOpen, onClose }) => {
             <div className={s.fieldWrapper}>
               <TextField
                 label={t('home.contactForm.nameTitle')}
-                {...register('name', {
+                {...register(CONTACT_FIELDS.NAME, {
                   required: `${t('home.contactForm.fillTheField')}. ${t(
                     'home.contactForm.minLength'
                   )} 2`,
                   minLength: 2,
+                  onChange: (e) => handleChange(e, CONTACT_FIELDS.NAME),
                 })}
                 error={!!errors.name}
                 variant='outlined'
                 className={s.field}
-                onChange={(e) => handleChange(e, CONTACT_FIELDS.NAME)}
+                // onChange={(e) => handleChange(e, CONTACT_FIELDS.NAME)}
               />
               {errors.name?.message && renderFieldError(errors.name?.message)}
             </div>
@@ -125,14 +129,15 @@ const ContactModal: FC<IContactModalProps> = ({ isOpen, onClose }) => {
             <div className={s.fieldWrapper}>
               <TextField
                 label={t('home.contactForm.emailTitle')}
-                {...register('email', {
+                {...register(CONTACT_FIELDS.EMAIL, {
                   required: t('home.contactForm.enterCorrectEmail') || '',
                   pattern: /[a-z0-9-]+@[a-z0-9-]+\.[a-z]{2,20}$/,
+                  onChange: (e) => handleChange(e, CONTACT_FIELDS.EMAIL),
                 })}
                 error={!!errors.email}
                 variant='outlined'
                 className={s.field}
-                onChange={(e) => handleChange(e, CONTACT_FIELDS.EMAIL)}
+                // onChange={(e) => handleChange(e, CONTACT_FIELDS.EMAIL)}
               />
               {errors.email?.message && renderFieldError(errors.email?.message)}
             </div>
@@ -140,15 +145,16 @@ const ContactModal: FC<IContactModalProps> = ({ isOpen, onClose }) => {
             <div className={s.fieldWrapper}>
               <TextField
                 label={t('home.contactForm.messageTitle')}
-                {...register('message', {
+                {...register(CONTACT_FIELDS.MESSAGE, {
                   required: t('home.contactForm.fillTheField') || '',
+                  onChange: (e) => handleChange(e, CONTACT_FIELDS.MESSAGE),
                 })}
                 error={!!errors.message}
                 multiline
                 rows={3}
                 variant='outlined'
                 className={s.field}
-                onChange={(e) => handleChange(e, CONTACT_FIELDS.MESSAGE)}
+                // onChange={(e) => handleChange(e, CONTACT_FIELDS.MESSAGE)}
               />
               {errors.message?.message &&
                 renderFieldError(errors.message?.message)}
