@@ -3,15 +3,15 @@ import s from './styles.module.sass'
 import { Link } from 'react-router-dom'
 import MotionPage from '../_common/MotionPage'
 import { useTranslation } from 'react-i18next'
-import cvEng from '../../assets/files/cvEng.pdf'
-import cvRus from '../../assets/files/cvRus.pdf'
 import { Button } from '@mui/material'
 import ContactModal from '../ContactModal'
+import SaveCVModal from './SaveCVModal'
 
 const Home: FC = () => {
   const [isContactModalOpen, setIsContactModalOpen] = useState<boolean>(false)
+  const [isSaveCVModalOpen, setIsSaveCVModalOpen] = useState<boolean>(false)
 
-  const { t, i18n } = useTranslation()
+  const { t } = useTranslation()
 
   return (
     <MotionPage className={s.home}>
@@ -39,10 +39,7 @@ const Home: FC = () => {
         </div>
       </div>
       <div className={s.rightSide}>
-        <a
-          href={i18n.language === 'en' ? cvEng : cvRus}
-          download={t('home.myNameCV')}
-        >
+        <button onClick={() => setIsSaveCVModalOpen(true)}>
           <div className={s.avatar}>
             <div className={s.avatarWink} />
             <div className={s.laptop}>
@@ -50,11 +47,15 @@ const Home: FC = () => {
             </div>
             <p className={s.donwloadCVText}>{t('home.clickToDownloadCV')}</p>
           </div>
-        </a>
+        </button>
       </div>
       <ContactModal
         isOpen={isContactModalOpen}
         onClose={() => setIsContactModalOpen(false)}
+      />
+      <SaveCVModal
+        isOpen={isSaveCVModalOpen}
+        onClose={() => setIsSaveCVModalOpen(false)}
       />
     </MotionPage>
   )

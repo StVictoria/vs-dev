@@ -25,6 +25,11 @@
             "fillTheField": "Fill the field",
             "minLength": "Min length is",
             "enterCorrectEmail": "Enter correct email"
+        },
+        "saveCVModal": {
+            "title": "Do you want to save CV?",
+            "confirm": "yes",
+            "cancel": "no"
         }
     },
     "portfolio": {

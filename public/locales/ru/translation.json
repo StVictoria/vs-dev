@@ -25,6 +25,11 @@
             "fillTheField": "Заполните поле",
             "minLength": "Минимальная длина",
             "enterCorrectEmail": "Введите корректный email"
+        },
+        "saveCVModal": {
+            "title": "Вы хотите сохранить резюме?",
+            "confirm": "Да",
+            "cancel": "Нет"
         }
     },
     "portfolio": {

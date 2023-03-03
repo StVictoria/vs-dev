@@ -1,0 +1,26 @@
+@import '/src/styles/mixins.sass'
+
+.saveCVModal
+    min-width: 300px
+    @include adaptive(medium)
+        min-width: unset
+        width: 200px
+
+.title
+    width: 74%
+    font-size: 1.3vw
+    margin: 0 auto
+    margin-top: 0.5vw
+    @include adaptive(medium)
+        font-size: 16px
+        margin-top: 10px
+
+.actions
+    display: flex
+    flex-direction: column
+    margin-top: 20px
+    button:not(:last-child)
+        margin-bottom: 5px
+
+.actions .cancelButton
+    padding: 0!important
