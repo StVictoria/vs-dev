@@ -1,23 +1,15 @@
-import React, { useTransition } from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './styles/index.sass'
 import App from './components/App'
 import reportWebVitals from './reportWebVitals'
 import { generateConsoleMessage, handleAppLoaded } from './utils/base'
-import { createTheme, ThemeProvider } from '@mui/material'
+import { ThemeProvider } from '@mui/material'
+import { theme } from './styles/theme'
 
 window.addEventListener('load', handleAppLoaded)
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
-
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#ff6f01',
-      contrastText: "#fff"
-    },
-  }
-})
 
 const renderer = () => {
   generateConsoleMessage(true)
