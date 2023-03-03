@@ -1,6 +1,5 @@
-import { Box, IconButton, Modal as MuiModal, Typography } from '@mui/material'
-import clsx from 'clsx'
-import { FC, useEffect } from 'react'
+import { Box, IconButton, Modal as MuiModal } from '@mui/material'
+import { FC } from 'react'
 import s from './styles.module.sass'
 import CloseIcon from '@mui/icons-material/Close'
 
@@ -11,28 +10,10 @@ interface IModalProps {
 }
 
 const Modal: FC<IModalProps> = ({ children, isOpen, onClose }) => {
-  //   const changeBodyOverflow = (isHidden: boolean) => {
-  //     const body = document.getElementsByTagName('body')[0]
-  //     if (isHidden) {
-  //       body.style.overflow = 'hidden'
-  //     } else {
-  //       body.style.overflow = 'auto'
-  //     }
-  //   }
-
-  //   useEffect(() => {
-  //     changeBodyOverflow(isOpen)
-  //   }, [isOpen])
-
-  const handleModalClose = () => {
-    // changeBodyOverflow(false)
-    onClose()
-  }
-
   return (
     <MuiModal
       open={isOpen}
-      onClose={handleModalClose}
+      onClose={onClose}
       style={{
         display: 'flex',
         justifyContent: 'center',
@@ -45,7 +26,7 @@ const Modal: FC<IModalProps> = ({ children, isOpen, onClose }) => {
           aria-label='close'
           size='large'
           className={s.closeButton}
-          onClick={handleModalClose}
+          onClick={onClose}
         >
           <CloseIcon className={s.closeIcon} />
         </IconButton>
